@@ -1,0 +1,105 @@
+/* print css start */
+@media print {
+  @page {
+    margin: 0;
+    min-width: 8.5in;
+    max-width: 8.8in;
+    height:10.8in;
+    max-height:10.8in;
+
+    page-break-before: always;
+    background-color: white;
+
+  }
+
+  i.print-soap {
+      display: none;
+  }
+
+  .notification{
+      display: none;
+  }
+  .menu, a.btn, .offline-message, .online-message, .timeline-item, .fa-close {
+      display: none;
+  }
+  button , .fa-close{
+      display: none;
+
+  }
+  * { overflow: visible !important; }
+
+  /* html, body {
+  height:100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+} */
+
+body {
+    height:11in;
+     background-color: white;
+
+}
+
+  #print-patient-dp {
+      width: 90px !important;
+      height: auto !important;
+  }
+  .page-content > * {
+     display:none;
+  }
+  #eprescription-menu-wizard-rx > * {
+      display:block;
+  }
+
+   #eprescription-menu-wizard-rx {
+
+       /* max-height: 100%; */
+       /* overflow: hidden;
+       page-break-after: always;
+       height: 15in; */
+
+        width: 100%;
+        height: 100%;
+        position:absolute;
+        top:0px;
+        bottom:0px;
+        margin: auto;
+        margin-top: 0px !important;
+        border: 0  !important;
+        box-shadow: none;
+   }
+   #printable-form {
+       height:100%;
+       border: 0  !important;
+       box-shadow: none;
+   }
+
+   .medical-form {
+       margin-bottom: 30px;
+   }
+
+   #form-footer {
+       position: absolute;
+       left: 0;
+       bottom: 0;
+   }
+
+}
+.printcss {
+    /* height: 11.4in !important;
+    max-height: 11.5in !important;
+    width: 8.4in !important;
+    max-width: 8.4in !important;
+    margin: 2px  !important;
+    margin-bottom:  0px !important;
+    border: 0  !important;
+    box-shadow: none; */
+}
+.printFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+/* print end */

@@ -1,0 +1,191 @@
+ <!-- Sidebar start here-->
+        <div class="wrapper ">
+
+        <nav id="sidebar" class="" style="background-color: #fff; border-color: #000; border: 1px;">
+            <a class="navbar-brand" href="#">
+                      <img
+                        src="../hxassets/hximages/logo/logoonly_2.png"
+                        class="mx-auto mt-3 mb-3"
+                        height="85"
+                        alt="healthxenxe"
+                        loading="lazy"
+                      />
+                     
+                    </a>
+                    <!--<div class="mx-auto mb-3" style="max-height: 2150px; max-width: 2150px; ">
+                        <a class="navbar-brand" href="#">
+                          <img
+                            src="{{URL::asset('/image/marc2.png')}}"
+                            class="mx-auto mt-3 mb-0 rounded-circle"
+                            height="120"
+                            alt="MDB Logo"
+                            loading="lazy"
+                            style="background-color: #0882C1; border-color: #0882C1; border: 0.5px;
+                                border-radius: 0.10rem;
+                                padding: 0.10rem"
+                          />
+                         
+                        </a>
+                        <p class="mb-0 text-center text-white">Marc Mangalila</p>
+                        <p class="mb-0 text-center lh-1" style="font-size: 14px;">Accounting Technology</p>
+                    </div>-->
+            <ul class="list-unstyled">
+                <li class="<?php if($page=='dashboard'){echo 'active';}?> nav-item">
+                   
+                    <a href="#" class="pt-0 pb-0 test"><i class='bx bx-bookmark nav_icon' ></i> Home</a>
+                </li>
+       
+
+                 <li class="">
+                    <a href="#orderSubmenu" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="orderSubmenu" class="dropdown-toggle2 pt-0 pb-0"><i class='bx bx-bookmark nav_icon'></i> Orders</a>
+                    <ul class="collapse list-unstyled" id="orderSubmenu">
+                        <li class="<?php if($page=='orders'){echo 'active';}?>">
+                            <a href="/orders/status" class="pt-0 pb-0">Order Status</a>
+                        </li>
+               
+                        <li class="<?php if($page=='payment'){echo 'active';}?>">
+                            <a href="/orders/payments" class="pt-0 pb-0">Payments</a>
+                        </li>
+
+                        <li class="<?php if($page=='physical'){echo 'active';}?>">
+                            <a href="/orders/physical" class="pt-0 pb-0">Physical Orders</a>
+                        </li>
+                        
+                    </ul>
+
+                </li>
+
+
+                
+                <li class="">
+                    <a href="#homeSubmenu" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="homeSubmenu" class="dropdown-toggle2 pt-0 pb-0"><i class='bx bx-bookmark nav_icon'></i> Products</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li class="<?php if($page=='featuredproduct'){echo 'active';}?>">
+                            <a href="/product/featured" class="pt-0 pb-0">Featured Products</a>
+                        </li>
+                        <!--<li class="<?php if($page=='linkproduct'){echo 'active';}?>">
+                            <a href="/product/link" class="pt-0 pb-0">Link Products</a>
+                        </li>-->
+                        <li class="<?php if($page=='categoryproduct'){echo 'active';}?>">
+                            <a href="/product/categories" class="pt-0 pb-0">Categories</a>
+                        </li>
+                        <li  class="<?php if($page=='imageproduct'){echo 'active';}?>">
+                            <a href="/product/images#" class="pt-0 pb-0">Images</a>
+                        </li>
+                      
+                        <li  class="<?php if($page=='importproducts'){echo 'active';}?>">
+                            <a href="/product/import#" class="pt-0 pb-0">Import Products</a>
+                        </li>
+
+                        <li  class="<?php if($page=='importcodes'){echo 'active';}?>">
+                            <a href="/product/codes#" class="pt-0 pb-0">Import Codes</a>
+                        </li>
+
+                         <li  class="<?php if($page=='codehistory'){echo 'active';}?>">
+                            <a href="/product/codeshistory#" class="pt-0 pb-0">Code History</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="">
+                    <a href="#settingsSubmenu" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="settingsSubmenu" class="dropdown-toggle2 pt-0 pb-0"><i class='bx bx-bookmark nav_icon'></i> Settings</a>
+                    <ul class="collapse list-unstyled" id="settingsSubmenu">
+                        <li class="<?php if($page=='catalogsettings'){echo 'active';}?>">
+                            <a href="/settings/catalog" class="pt-0 pb-0">Catalog</a>
+                        </li>
+                         <li class="<?php if($page=='shippingratessettings'){echo 'active';}?>">
+                            <a href="/settings/shippingrates" class="pt-0 pb-0">Shipping Rates</a>
+                        </li> 
+                        <li class="<?php if($page=='users'){echo 'active';}?>">
+                            <a href="/settings/users" class="pt-0 pb-0">Users</a>
+                        </li>
+                        <li class="<?php if($page=='audittrails'){echo 'active';}?>">
+                            <a href="/settings/audit_trails" class="pt-0 pb-0">Audit Trails</a>
+                        </li>
+                    </ul>
+
+
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-mdb-toggle="collapse" aria-expanded="false"  aria-controls="pageSubmenu" class="dropdown-toggle2 pt-0 pb-0"><i class='bx bx-bookmark nav_icon'></i> Reports</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li class="<?php if($page=='generatereports'){echo 'active';}?>">
+                            <a  href="/reports/generate" class="pt-0 pb-0">Generate Report</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item " style="position: absolute;
+                             bottom: 0px;
+                            text-align: center;">
+                   
+                    <a href="{{ route('logout') }}" class="pt-0 pb-3"    onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();" style="text-align: center;"><i class='bx bx-bookmark nav_icon' ></i> Log Out</a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                </li>
+
+
+            </ul>  
+
+            
+             
+        </nav>
+         <!-- Sidebar end here-->
+
+         <!-- content opener here-->
+         <div id="content" class="">
+            <div class="container-fluid pt-4 pb-1" >
+                <div class="d-flex flex-row mt-n3">
+                  <div class="p-0">
+                        <button type="button" id="sideiconcollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                         </button>
+                  </div>
+                  <div class="p-2  d-flex align-items-center">
+                        <p class="text-dark mb-0 fs-6 fw-bold">@yield('pagename')  </p> 
+                  </div>
+
+                  <div class="p-2  ms-auto d-flex align-items-center">
+                        <p class="text-muted mb-0" id="time"> </p> 
+                  </div>
+
+                  <script type="text/javascript">
+                    var timestamp = '<?=time();?>';
+
+
+                    function updateTime(){
+                      $('#time').html(Date(timestamp));
+                      timestamp++;
+                    }
+                    $(function(){
+                      setInterval(updateTime, 1000);
+                    });
+                    </script>
+                  
+
+                </div>
+                      
+            </div>
+
+        <!-- content opener to be continue here-->  
+
+        <main class="card rounded-0"> 
+            @yield('content')
+            <div id="page2"></div>
+
+        </main>
+
+         <section id="loading">
+            <div id="loading-content"></div>
+        </section>
+    </div>
+
+
+
+
+

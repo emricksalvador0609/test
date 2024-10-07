@@ -1,0 +1,167 @@
+<!-- FOOTER MENU -->
+<!-- <div class="footer" data-menu-load="dash-menu-footer.html"></div>
+ -->
+<div class="page-content mt-5 pt-3 pb-0">
+<!--     <div class="page-title page-title-small">
+        <h2>Presciption</h2>
+    </div>
+    <div class="card header-card shape-rounded" data-card-height="150">
+        <div class="card-overlay bg-highlight opacity-95"></div>
+        <div class="card-overlay dark-mode-tint"></div>
+    </div> -->
+
+
+    <!-- <div class="card card-style">
+        <div class="card-body">
+            <p class="mb-0">
+                A great way to provide a multi-step form for your customers to fill out. These support any component, and can also be programatically triggered.
+            </p>
+        </div>
+    </div> -->
+
+    <h3>Prescription</h3>
+
+    <div class="card card-style">
+        <div class="card-body">
+            <div class="list-group list-custom-small">
+                <a id="show-prescription-wizard" href="#" data-menu="eprescription-menu-wizard-2" class="border-0">
+					<i class="fa fa-edit font-16 color-blue-dark"></i><span>Tap to Create a e-Prescription</span>
+					<i class="fa fa-angle-right"></i>
+				</a>
+            </div>
+
+        </div>
+    </div>
+
+	<!-- <div class="card card-style">
+        <div class="content">
+            <h3 class="font-16">Prescription History (50)</h3>
+            <p>
+                Your transactions here. You can filter the data. Please note this is a template.
+            </p>
+
+            <div class="input-style has-borders input-style-always-active no-icon mb-4">
+                <label for="dash-prescription-activity-range" class="color-highlight font-500">Activity RAnge</label>
+                <select id="dash-prescription-activity-range">
+                    <option value="default" disabled>Activity Range</option>
+                    <option value="today" selected>Today</option>
+                    <option value="7 days">Past 7 Days</option>
+                    <option value="30 days">Past 30 Days</option>
+                    <option value="6 months">Past 6 Months</option>
+                </select>
+            </div>
+
+            <div class="divider mt-3 mb-3"></div>
+
+            <div id="dash-prescripion-list">
+            </div>
+
+        </div>
+	</div> -->
+
+
+</div>
+<!-- end of page content-->
+
+<!-- Menu Wizard 1 -->
+<div id="eprescription-menu-wizard-1" class="menu menu-box-left" data-menu-width="cover" data-menu-effect="menu-over">
+	<div class="card" data-card-height="230" style="margin-bottom:-70px">
+		<div class="card-center text-center">
+			<h1 class="color-white font-600 mb-n1 mt-n4 font-32">e-Prescription Form</h1>
+		</div>
+		<div class="card-overlay bg-highlight opacity-95"></div>
+		<div class="card-overlay dark-mode-tint"></div>
+	</div>
+	<div class="card card-style">
+		<div class="content pb-3">
+			<div class="d-flex">
+
+				<div class="me-auto">
+					<h4 class="font-600">Patient Information</h4>
+					<p class="font-11 mt-n2 mb-3">SEARCH for Patient name and then CLICK on it to create ePrescription.</p>
+				</div>
+				<div class="ms-auto">
+					<i data-feather="user"
+						data-feather-line="1"
+						data-feather-size="40"
+						data-feather-color="blue-dark"
+						data-feather-bg="blue-fade-light">
+					</i>
+				</div>
+			</div>
+
+			<!-- Search for a Patient -->
+			<div class="search-box search-color shadow-xl border-0 bg-highlight rounded-l bottom-0">
+                <i class="fa fa-search"></i>
+                <input type="text" class="border-0" placeholder="Search Patient Name..." id="dash-prescription-search-patient">
+            </div>
+
+			<div class="content pt-3 pb-3" id="dash-prescription-search-patient-loader">
+	            <div class="d-flex justify-content-center">
+                    <div class="spinner-border color-blue-dark" role="status">
+                    </div>
+                </div>
+			</div>
+
+            <div class="search-results disabled-search-list" id="dash-prescription-searched-patient-result">
+				<div class="list-group list-custom-large">
+                </div>
+            </div>
+            <div class="search-no-results disabled mt-4" id="dash-prescription-searched-patient-empty">
+                <h4>No Results</h4>
+                <p>
+                    Your search brought up no results. Try using a different keyword of the patient name.
+                </p>
+            </div>
+			<!-- //Search for a Patient -->
+
+		</div>
+	</div>
+
+	<a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12">Close</a>
+</div>
+
+<!-- Menu Wizard 2 -->
+<div id="eprescription-menu-wizard-2" class="menu menu-box-right" data-menu-width="cover" data-menu-effect="menu-over">
+	<div class="card" data-card-height="230" style="margin-bottom:-70px">
+		<div class="card-center text-center">
+			<h1 class="color-white font-600 mb-n1 mt-n4 font-32">e-Prescription</h1>
+			<span class="color-white">for</span>
+			<p class="color-white opacity-70" id="menu-confirm-title">Patient John Doe</p>
+		</div>
+		<div class="card-overlay bg-highlight opacity-95"></div>
+		<div class="card-overlay dark-mode-tint"></div>
+	</div>
+
+	<div id="dash-prescription-card-medication-list">
+	</div>
+
+
+	<!-- Buttons -->
+	<div class="row">
+		<div class="col-6">
+			<a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-blue-light color-blue-light d-grid gap-2 btn-outline-primary" id="dash-prescription-add-medication">Add Medication</a>
+		</div>
+		<div class="col-6">
+			<a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase d-grid gap-2" id="dash-prescription-confirm-review">REVIEW RX</a>
+		</div>
+	</div>
+
+	<a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12 d-grid gap-2 ">Close</a>
+
+</div>
+
+<!-- Successful Prescription -->
+<div id="menu-wizard-prescription-successful" class="menu menu-box-modal" data-menu-width="cover" data-menu-effect="menu-over">
+	<div class="card" data-card-height="cover">
+		<div class="card-center text-center">
+			<i class="fa fa-check-circle color-green-dark fa-5x"></i>
+			<h1 class="pt-4 font-26 mb-0">Prescription Successful!</h1>
+			<p class="boxed-text-l">
+				All prescriptions has beend saved and will reflect on 'Prescription' tab.
+			</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-prescription.js" ></script>

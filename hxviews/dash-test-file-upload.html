@@ -1,0 +1,143 @@
+
+<!-- 3 -->
+
+<div class="footer" data-menu-load="dash-menu-footer.html"></div>
+
+<form id="dropzone-form">
+    <div class="form-group col-lg-12" visible id="row_lab_result">
+		<label>Photo (1 Image Only)</label>
+		<input type="hidden" value="Laboratory" id="module_name" />
+		<input type="hidden" value='[]' file-limit="1" file-max-size="1" accepted-filetypes="image/*" table="" name="lab_result" class="file_value" />
+		<div style="display: none;" id="image_file_list"></div>
+		<div style="display: none;" id="image_mock_file_list">[{"link":""}]</div>
+
+		<div class="dropzone clsbox" id="lab_result">
+			<div class="fallback">
+				<input name="file" type="file" />
+			</div>
+		</div>
+	</div>
+</form>
+
+<br>
+<a href="#" class="btn btn-full btn-margins bg-highlight rounded-sm shadow-xl btn-m text-uppercase font-900" id="save-laboratory-request">Save Laboratory Result</a>
+
+<script>
+    Dropzone.autoDiscover = false;
+
+    var base_url = "https://doctorapp.healthxense.com/";
+    /* DROPZONE GLOBAL JS FILE UPLOADS START */
+    var myDropzone = "";
+    var global_dropzone_files = {};
+    var dz_is_sending = false;
+
+    $(document).ready(function(){
+    //file uploader
+    var module_name = "Lab-Request";
+
+    is_logged_in(session_table, false).then((prof_data) => {
+
+            if($(".dropzone").length){
+
+                $(".dropzone").each(function(){
+
+                    var dropzone_id = $(this).attr("id");
+                    var input_val = $(this).parent().find('.file_value');
+                    var mock_file_text = $(this).parent().find("#image_mock_file_list").text();
+
+                    var file_limit = 2;
+                    var accepted_filetypes = ".pjpeg, .bmp, .png, .jpeg, .jpg, .pdf";
+                    //var file_max_size = parseInt(input_val.attr("file-max-size"));
+                    var file_max_size = 4; //MB
+
+                    //initialize dropzone
+                    init_dropzone( "div#"+dropzone_id, base_url + "upload/dropzone/index.php", module_name, input_val, file_limit, accepted_filetypes, file_max_size);
+
+                    /* preview cover photo images */
+                    if( $("#pk").val() > 0 ) {
+                        show_mock_file($(this), mock_file_text);
+                    }
+                });
+            }
+
+            $("#save-laboratory-request").click( function () {
+                //cover_photo
+                let lab_result_images = $("input[name=lab_result]").val();
+                let lab_request_id = "3";
+                //console.log(actokensec);
+                saveLabResult(lab_request_id,lab_result_images,module_name,actokensec);
+
+            });
+
+        });
+
+    });
+
+
+    function saveLabResult(lab_order_id,file_js,module_name,actokensec) {
+
+        console.log(module_name);
+
+        let data = {
+			"keyword": "add-lab-result",
+			"lab_order_id": lab_order_id,
+            'module': module_name,
+            "dropzone_data": file_js,
+			"actokensec": actokensec,
+		};
+
+
+        console.log(file_js);
+
+        let jwt_data = jwt_encode(data);
+
+        console.log(jwt_data);
+
+
+		$.ajax({
+			url: baseApiUrl,
+			cache: true,
+			type: "POST",
+			data: jwt_data,
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader ("Authorization", "Basic " + btoa(basicAuthUsername + ":" + basicAuthPass));
+
+			},
+			success : function (data) {
+
+                console.log(data);
+
+				let status = data.status;
+				let message = data.message;
+
+				if(status == "success"){
+
+
+				}else{
+					showToastNotification("Error!", message);
+
+					//access token error, redirect to login
+					// if(typeof data.actokenerror && data.actokenerror){
+					// 	setTimeout(function(){
+					// 		window.location.replace(baseAppUrl+"hxviews/?hxcurrentpage=auth-login");
+					// 	}, 3000);
+					// }
+				}
+
+				//_this.attr("disabled", false).text(old_txt);
+
+			},
+			error: function (error) {
+				//_this.attr("disabled", false).text(old_txt);
+				showToastNotification("Error!", error.responseText);
+			}
+		});
+
+    }
+
+
+
+
+
+
+</script>

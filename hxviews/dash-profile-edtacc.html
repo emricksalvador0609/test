@@ -1,0 +1,88 @@
+<h3 class="text-black" id="navigator-text">Edit Account</h3>
+<div class="card p-2">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="d-flex">
+	            <div id="profile-picture-container">
+	               <img id="profile-avatar" src="../hxassets/hximages/logo/avatar.jpg" width="50" class="me-3 bg-highlight rounded-xl"  onerror="this.onerror=null;this.src='../hxassets/hximages/logo/avatar.jpg';">
+
+	               <i class="fa fa-camera upload-button" style="
+	                    color: slategrey;
+	                    left: 55px;
+	                    top: 50px;
+	                    position: absolute;"></i>
+	            </div>
+	            <div>
+	               <h1 class="mb-0 pt-1" id="my-profile-full-name"></h1>
+	               <p class="color-highlight font-11 mt-n2 mb-3">Medical Doctor</p>
+	            </div>
+         	</div>
+		</div>
+		<div class="col-md-8"></div>
+	</div>
+
+	
+         <p>
+            Basic details about you. Set them here. These can be connected to your database and shown on the user profile.
+         </p>
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-4">
+            <input type="text" class="form-control validate-name" id="first-name" placeholder="">
+            <label for="first-name" class="color-highlight font-400 font-13">First Name</label>
+            <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <em>(required)</em>
+         </div>
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-4">
+            <input type="text" class="form-control validate-name" id="last-name" placeholder="">
+            <label for="last-name" class="color-highlight font-400 font-13">Last Name</label>
+            <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <em>(required)</em>
+         </div>
+
+         <div class="input-style has-borders no-icon mb-4 input-style-always-active">
+             <label for="gender" class="color-highlight">Select Gender</label>
+             <select id="gender">
+                 <option value="default" disabled="" selected="">Select Gender</option>
+                 <option value="Male">Male</option>
+                 <option value="Female">Female</option>
+             </select>
+             <span><i class="fa fa-chevron-down"></i></span>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <i class="fa fa-check disabled invalid color-red-dark"></i>
+             <em></em>
+         </div>
+
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-4">
+            <input type="date" class="form-control validate-birthday" id="birthday" placeholder="">
+            <label for="birthday" class="color-highlight font-400 font-13">Birthday</label>
+            <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <em>(required)</em>
+         </div>
+
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-4">
+            <input type="text" class="form-control validate" id="title" placeholder="" style="position: relative;">
+            <label for="title" class="color-highlight font-400 font-13">Title</label>
+            <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <em>(required)</em>
+         </div>
+         <div class="input-style has-borders no-icon input-style-always-active validate-field mb-4">
+            <input type="email" class="form-control validate-email" id="email-address" placeholder="">
+            <label for="email-address" class="color-highlight font-400 font-13">Email Address</label>
+            <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <em>(required)</em>
+         </div>
+         <div class="input-style has-borders no-icon input-style-always-active validate-field mb-4">
+            <input type="tel" class="form-control validate-tel" id="phone-number" placeholder="">
+            <label for="phone-number" class="color-highlight font-400 font-13">Phone Number</label>
+            <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <em>(required)</em>
+ 	</div>
+
+
+</div>
+

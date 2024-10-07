@@ -1,0 +1,59 @@
+<!-- FOOTER MENU -->
+<!-- <div class="footer" data-menu-load="dash-menu-footer.html"></div>
+ -->
+<div class="page-content mt-5 pt-3">
+   <!--  <div class="page-title page-title-small">
+        <h2>Today's Patient Queue</h2>
+    </div> -->
+  <!--   <div class="card header-card shape-rounded" data-card-height="150">
+        <div class="card-overlay bg-highlight opacity-95"></div>
+        <div class="card-overlay dark-mode-tint"></div>
+    </div> -->
+       <style>
+        .dropdown-menu {
+            max-height: 400px; /* Set maximum height */
+            overflow-y: auto; /* Enable vertical scrolling */
+             min-width:inherit;
+             
+        }
+    </style>
+
+    <div class="d-flex justify-content-between">
+        <div class="ms-0">
+             <h3>Today's Patient Queue</h3>
+        </div>
+        <div class="ms-auto">
+             <div class="dropdown">
+                <a  class="text-reset me-3" href="#"  
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-bs-toggle="dropdown"
+                    data-bs-ripple-init
+                    aria-expanded="false"> 
+                    <i class="fas fa-bell fa-lg"></i>
+                    <span class="badge rounded-pill badge-notification bg-danger" id="req_count_lbl">0</span>
+
+                 </a>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"  style="min-width:auto;">
+                        <li  id="request_consul_list">
+                        </li>
+                  </ul>
+            </div>
+        </div>
+    </div> 
+    
+
+     <a href="#" class="text-decoration-none">Waiting List (<span id="dash-patient-todays-count">0</span>)</a>
+
+    <div class="row" id="dash-patient-todays-list-div">
+
+
+    </div>
+
+
+
+</div>
+<!-- end of page content-->
+
+
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-patient-queue.js" ></script>

@@ -1,0 +1,328 @@
+<div class="page-content mt-5 pt-3">
+<h3>Income & Expense List</h3>
+
+	<ul class="nav nav-pills mb-2 nav-justified " id="pills-tab" role="tablist" style="flex-direction: row; justify-content: normal;">
+	  <li class="nav-item d-grid gap-2" role="presentation">
+	    <button class="nav-link active " id="pills-expenses-tab" data-bs-toggle="pill" data-bs-target="#pills-expenses" type="button" role="tab" aria-controls="pills-expenses" aria-selected="true">Expenses</button>
+	  </li>
+	  <li class="nav-item d-grid gap-2" role="presentation">
+	    <button class="nav-link" id="pills-payment-tab" data-bs-toggle="pill" data-bs-target="#pills-payment" type="button" role="tab" aria-controls="pills-payment" aria-selected="false">Payment</button>
+	  </li>
+	  <li class="nav-item d-grid gap-2" role="presentation">
+	    <button class="nav-link" id="pills-financerep-tab" data-bs-toggle="pill" data-bs-target="#pills-financerep" type="button" role="tab" aria-controls="pills-financerep" aria-selected="false">Finance Report</button>
+	  </li>
+
+	</ul>
+
+	<div class="tab-content p-2" id="pills-tabContent">
+		<!-- expenses tab start here --> 
+	  	<div class="tab-pane fade w-100 text-black active show" id="pills-expenses" role="tabpanel" aria-labelledby="pills-expenses-tab" tabindex="0">
+   		 	<div class="row g-1 mb-2">
+		        <div class="col-md-6 col-sm-12 d-grid gap-2">
+		            <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s" data-mdb-ripple-init id="dash-accounting-expense-add"  data-bs-toggle="modal" data-bs-target="#expenseModal">
+		            <i class="fa fa-user font-16 me-1"></i> ADD Expense
+		          </a>
+		        </div>
+		         <div class="col-md-6 col-sm-12 d-grid gap-2">
+		            <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s" data-mdb-ripple-init id="dash-accounting-expense-type"  data-bs-toggle="modal" data-bs-target="#expensecateModal">
+		            <i class="fa fa-user font-16 me-1"></i>Expense Category
+		          </a>
+		        </div>
+		    </div>
+		    <div class="table-responsive">
+			    <table class="table  table-sm" id="expense_datatbl">
+			      <thead>
+			        <tr>
+			          <th scope="col">#</th>
+			          <th scope="col">Date</th>
+			          <th scope="col">Particulars</th>
+			          <th scope="col">Expense Amount</th>
+			          <th scope="col">Expense Category</th>
+			          <th scope="col">Encoded By</th>
+			          <th scope="col">Posted on</th>
+			        </tr>
+			      </thead>
+			      <tbody id="expense_tbl">
+			            
+			      </tbody>
+			    </table>
+		    </div>
+
+	  	</div>
+
+	  	<!-- expenses tab end here -->
+
+	 	<!-- payment tab start here --> 
+	  	<div class="tab-pane fade w-100 text-black" id="pills-payment" role="tabpanel" aria-labelledby="pills-payment-tab" tabindex="0">
+	       <div class="row g-1 mb-2">
+		          <div class="col-md-6 col-sm-12 d-grid gap-2">
+		            <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s" data-mdb-ripple-init id="dash-accounting-payment-add" data-bs-toggle="modal" data-bs-target="#paymentModal"><i class="fa fa-box-archive font-16 me-1"></i>ADD Payment</a>  
+
+		        </div>
+		          <div class="col-md-6 col-sm-12 d-grid gap-2">
+		            <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s" data-mdb-ripple-init id="dash-accounting-payment-type"  data-bs-toggle="modal" data-bs-target="#paymentmethodModal">
+		            <i class="fa fa-user font-16 me-1"></i>Payment Method
+		          </a>
+		        </div>
+		    </div>
+
+		    <table class="table table-sm" id="income_datatbl">
+		      <thead>
+		        <tr>
+		          <th scope="col">#</th>
+		          <th scope="col">Date</th>
+		          <th scope="col">Particulars</th>
+		          <th scope="col">Payment Amount</th>
+           		   <th scope="col">Payment Method</th>
+		          <th scope="col">Encoded By</th>
+		          <th scope="col">Posted on</th>
+		        </tr>
+		      </thead>
+		      <tbody id="payment_tbl">
+		            
+		      </tbody>
+		    </table>
+		      
+	  	</div>
+  	 	<!-- payment tab end here --> 
+    	<!-- finance report tab start here --> 
+	  	<div class="tab-pane fade w-100 text-black" id="pills-financerep" role="tabpanel" aria-labelledby="pills-financerep-tab" tabindex="0">
+	  		<table class="table table-sm" id="incomeexpense_datatbl">
+		      <thead>
+		        <tr>
+		          <th scope="col">#</th>
+		          <th scope="col">Month/Year</th>
+		          <th scope="col">Total Payment</th>
+		          <th scope="col">Total Expense</th>
+		          <th scope="col">Total Gross</th>
+		        </tr>
+		      </thead>
+		      <tbody id="income_expense_tbl">
+		            
+		      </tbody>
+		    </table>
+		</div>
+		<!-- finance report tab end here --> 
+
+	</div>
+
+<!-- modals -->
+
+
+<!-- expense modal -->
+<div class="modal top fade" id="expenseModal" tabindex="-1" aria-labelledby="expenseModalLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header pb-2 pt-2">
+        <h5 class="modal-title" id="expenseModalLabel">Add Expense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		 	<div class="row gx-1 gy-1 mb-0">
+      	 		<div class="col-md-6 col-sm-12">
+  	 			  	<div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                     	<input type="text" class="form-control validate-name" id="expense_name" placeholder="">
+                     	<label for="expense_name" class="color-highlight font-400 font-13">Particulars</label>
+                     	<i class="fa fa-times disabled invalid color-red-dark"></i>
+                     	<i class="fa fa-check disabled valid color-green-dark"></i>
+                     	<em>(required)</em>
+                    </div>
+	            </div>
+	            <div class="col-md-6 col-sm-12">
+  	 			  	<div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                     	<input type="number" class="form-control validate-name" id="expense_amount" placeholder="">
+                     	<label for="expense_amount" class="color-highlight font-400 font-13">Expense Amount</label>
+                     	<i class="fa fa-times disabled invalid color-red-dark"></i>
+                     	<i class="fa fa-check disabled valid color-green-dark"></i>
+                     	<em>(required)</em>
+                    </div>
+	            </div>
+	            <div class="col-md-12 col-sm-12">
+            	    <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+	                  	<input type="date" class="form-control validate-birthday" id="expense_date" placeholder="">
+	                  	<label for="expense_date" class="color-highlight font-400 font-13">Expense Date</label>
+	                  	<i class="fa fa-times disabled invalid color-red-dark "></i>
+	                  	<i class="fa fa-check disabled valid color-green-dark"></i>
+	                  	<em>(required)</em>
+	                </div>	
+	            </div>
+	            <div class="col-md-12 col-sm-12">
+	            	<select class="form-select rounded-2" aria-label="Default select example" id="expense_category_sel">
+					  <option selected value="">Select Expense Category</option>
+					</select>
+	            </div>	
+ 			</div>
+
+ 			<!-- actions -->
+ 			<div class="row mt-2 mb-0">
+	      		<div class="col-md-6 d-grid gap-2">
+	  			 	<button type="button" class="btn btn-outline-danger d-grid gap-2" data-bs-dismiss="modal">
+			          Close
+			        </button>
+	      		</div>
+	      		<div class="col-md-6 d-grid gap-2">
+	  			 	<button type="button" class="btn btn-primary myprimarybtnn d-grid gap-2" id="expense_save_btn">ADD</button>
+	      		</div>
+	      	</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- payment modal -->
+<div class="modal top fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header pb-2 pt-2">
+        <h5 class="modal-title" id="paymentModalLabel">Add Payment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		 	<div class="row gx-1 gy-1 mb-0">
+      	 		<div class="col-md-6 col-sm-12">
+  	 			  	<div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                     	<input type="text" class="form-control validate-name" id="payment_name" placeholder="">
+                     	<label for="payment_name" class="color-highlight font-400 font-13">Particulars</label>
+                     	<i class="fa fa-times disabled invalid color-red-dark"></i>
+                     	<i class="fa fa-check disabled valid color-green-dark"></i>
+                     	<em>(required)</em>
+                    </div>
+	            </div>
+	            <div class="col-md-6 col-sm-12">
+  	 			  	<div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                     	<input type="number" class="form-control validate-name" id="payment_amount" placeholder="">
+                     	<label for="payment_amount" class="color-highlight font-400 font-13">Payment Amount</label>
+                     	<i class="fa fa-times disabled invalid color-red-dark"></i>
+                     	<i class="fa fa-check disabled valid color-green-dark"></i>
+                     	<em>(required)</em>
+                    </div>
+	            </div>
+	            <div class="col-md-12 col-sm-12">
+            	    <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+	                  	<input type="date" class="form-control validate-birthday" id="payment_date" placeholder="">
+	                  	<label for="payment_date" class="color-highlight font-400 font-13">Payment Date</label>
+	                  	<i class="fa fa-times disabled invalid color-red-dark "></i>
+	                  	<i class="fa fa-check disabled valid color-green-dark"></i>
+	                  	<em>(required)</em>
+	                </div>	
+	            </div>
+	            <div class="col-md-12 col-sm-12">
+	            	<select class="form-select rounded-2" aria-label="Default select example" id="payment_method_sel">
+					  <option selected value="">Select Payment Method</option>
+					
+					</select>
+	            </div>	
+ 			</div>
+
+ 			<!-- actions -->
+ 			<div class="row mt-2 mb-0">
+	      		<div class="col-md-6 d-grid gap-2">
+	  			 	<button type="button" class="btn btn-outline-danger d-grid gap-2" data-bs-dismiss="modal">
+			          Close
+			        </button>
+	      		</div>
+	      		<div class="col-md-6 d-grid gap-2">
+	  			 	<button type="button" class="btn btn-primary myprimarybtnn d-grid gap-2" id="payment_save_btn">ADD</button>
+	      		</div>
+	      	</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- expense category modal -->
+<div class="modal top fade" id="expensecateModal" tabindex="-1" aria-labelledby="expensecateModalLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header pb-2 pt-2">
+        <h5 class="modal-title" id="expensecateModalLabel">Expense Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      		<div class="row mb-0 g-1">
+      			<div class="col-md-8">
+      				<div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+		             	<input type="text" class="form-control validate-name" id="category_name" placeholder="">
+		             	<label for="category_name" class="color-highlight font-400 font-13">Category Name</label>
+		             	<i class="fa fa-times disabled invalid color-red-dark"></i>
+		             	<i class="fa fa-check disabled valid color-green-dark"></i>
+		             	<em>(required)</em>
+		            </div>
+      			</div>
+      			<div class="col-md-4">
+      				<a type="button" class="btn btn-primary myprimarybtnn btn-xl rounded-s d-grid gap-2" data-mdb-ripple-init="" id="dash-accounting-expense-cat" > ADD 
+           			 </a>
+      			</div>
+      		</div>
+  			
+
+		 	<div class="table-responsive">
+			    <table class="table  table-sm">
+			      <thead>
+			        <tr>
+			          <th scope="col">#</th>
+			          <th scope="col">Category Name</th>
+			        </tr>
+			      </thead>
+			      <tbody id="expense_category_tbl">
+			            
+			      </tbody>
+			    </table>
+		    </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- payment method modal -->
+<div class="modal top fade" id="paymentmethodModal" tabindex="-1" aria-labelledby="paymentmethodModalLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header pb-2 pt-2">
+        <h5 class="modal-title" id="paymentmethodModalLabel">Payment Method</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      		<div class="row mb-0 g-1">
+      			<div class="col-md-8">
+      				<div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+		             	<input type="text" class="form-control validate-name" id="paymentmethod_name" placeholder="">
+		             	<label for="paymentmethod_name" class="color-highlight font-400 font-13">Payment Method Name</label>
+		             	<i class="fa fa-times disabled invalid color-red-dark"></i>
+		             	<i class="fa fa-check disabled valid color-green-dark"></i>
+		             	<em>(required)</em>
+		            </div>
+      			</div>
+      			<div class="col-md-4">
+      				<a type="button" class="btn btn-primary myprimarybtnn btn-xl rounded-s d-grid gap-2" data-mdb-ripple-init="" id="dash-accounting-payment-method" > ADD 
+           			 </a>
+      			</div>
+      		</div>
+  			
+
+		 	<div class="table-responsive">
+			    <table class="table  table-sm">
+			      <thead>
+			        <tr>
+			          <th scope="col">#</th>
+			          <th scope="col">Payment Method Name</th>
+			        </tr>
+			      </thead>
+			      <tbody id="payment_method_tbl">
+			            
+			      </tbody>
+			    </table>
+		    </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-accounting.js" ></script>

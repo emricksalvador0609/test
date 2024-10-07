@@ -1,0 +1,156 @@
+	<div class="d-flex align-items-center justify-content-center mt-lg-3">
+
+    <div class="container">
+         <div class="row">
+            <div class="col-md-4 " 
+            style="background: linear-gradient(rgba(0,0,0,0.4), rgba(255,255,255,0.4)),url('../hxassets/hximages/logo/login_bg.png') 
+            no-repeat center center; background-size: cover;">
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                     <img src="../hxassets/hximages/logo/logoonly_2.png"
+                        class="img-fluid" style="height: 110px; width:auto;"> 
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="row mt-4 mb-3" >
+                        <div class="text-center">
+                            <h3 style="color: #fff;">Already Member ?</h3>   
+                        </div> 
+                        <div class="text-center">
+                            <a class="btn btn-primary p-2" style="background-color: #4bb0da; font-size: 10px; width: 150px;" 
+                            href="?hxcurrentpage=auth-login">SIGN IN</a> 
+                        </div>
+                    </div>                  
+                </div>
+           </div>
+            <div class="col-md-8 card rounded-0 mb-0">
+                <div class=" container">
+                    <!-- header title-->
+                    <div class="d-flex justify-content-center mt-3">
+                        <h4 class="text-center" style="color: #4bb0da">
+                            Create an Account
+                        </h4>
+                    </div>
+
+               
+
+                   <!-- social label title-->
+                    <div class="d-flex justify-content-center mt-2">
+                        <p style="color: #bdc3c7; font-size: 14px;"> Follow us on our social media pages!</p>
+                    </div>
+                    <!-- social media icons-->
+                    <div class="row g-0 d-flex align-items-center justify-content-center mb-2">
+                        <div class="col-md-6">
+                           <div class="row g-0 d-flex align-items-center justify-content-center">
+                                <div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                    
+                                    <a href="#"><img src="../hxassets/hximages/logo/google_logo2.png"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>
+                                <div class="col-sm col d-flex align-items-center justify-content-center" > 
+                               <a href="#"><img src="../hxassets/hximages/logo/facebook_logo2.png"   
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>
+                                <!--<div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                 <a href="{{ url('auth/twitter') }}"><img src="{{URL::asset('/image/twitter_logo.png')}}"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>-->
+                                <!--<div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                 <a href="{{ url('auth/instagram') }}"><img src="{{URL::asset('/image/instagram_logo2.png')}}"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div> -->
+                                <div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                <a href="#"><img src="../hxassets/hximages/logo/linkedin_logo2.png"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <!-- social label title-->
+                    <div class="d-flex justify-content-center mt-3 pe-2 ps-2">
+                        <div class="hr-sect">or</div>
+                    </div>
+
+                    <div class="card-body p-2">
+                                <div class="input-style no-borders has-icon validate-field">
+                    <i class="fa fa-user"></i>
+                    <input type="name" class="form-control validate-first-name" id="first-name" placeholder="First Name">
+                    <label for="form1a" class="color-blue-dark font-10 mt-1">First Name</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+                <div class="input-style no-borders has-icon validate-field">
+                    <i class="fa fa-user"></i>
+                    <input type="name" class="form-control validate-last-name" id="last-name" placeholder="Family Name">
+                    <label for="form1a" class="color-blue-dark font-10 mt-1">Family Name</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+                <div class="input-style no-borders has-icon validate-field mt-2">
+                    <i class="fa fa-at"></i>
+                    <input type="email" class="form-control validate-email" id="email" placeholder="Email">
+                    <label for="form1aa" class="color-blue-dark font-10 mt-1">Email</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+                  <div class="input-style no-borders has-icon validate-field mt-2">
+                    <i class="fa fa-phone"></i>
+                    <input type="number" class="form-control" id="phone" placeholder="Phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" >
+                    <label for="form1aa" class="color-blue-dark font-10 mt-1">Phone</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                  <!-- <div class="input-style no-borders has-icon validate-username mt-2">
+                    <i class="fa fa-user"></i>
+                    <input type="name" class="form-control" id="username" placeholder="Username" >
+                    <label for="form1aa" class="color-blue-dark font-10 mt-1">Username</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div> -->
+                <div class="input-style no-borders has-icon mt-2">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" class="form-control" id="password" placeholder="Choose a Password">
+                    <label for="form3a" class="color-blue-dark font-10 mt-1">Enter Password</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+                <div class="input-style no-borders has-icon  mt-2">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" class="form-control" id="password-confirmation" placeholder="Confirm your Password">
+                    <label for="form3a1" class="color-blue-dark font-10 mt-1">Confirm Password</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                            <!-- register Button-->
+                            <div class="d-md-flex justify-content-md-end">
+                                <a href="#" id="btn-register" class="btn btn-m btn-full rounded-sm shadow-l bg-blue-dark text-uppercase font-700 mt-4">Create account</a>
+
+                           
+                      
+                    </div>
+                </div>  
+            </div>
+         </div>       
+    </div>
+</div> 
+
+    <!-- end of page content-->
+
+<script type="text/javascript" src="../hxassets/hxjs/jquery.validate.min.js" ></script>
+
+<!-- JWT Start-->
+<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/core.js" ></script>
+<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/enc-base64.js" ></script>
+<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/hmac.js" ></script>
+<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/sha256.js" ></script>
+<!-- JWT End-->
+<script type="text/javascript" src="../hxassets/hxjs/views/register.js" ></script>

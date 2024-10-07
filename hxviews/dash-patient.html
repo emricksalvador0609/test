@@ -1,0 +1,228 @@
+<link rel="stylesheet" type="text/css" href="../hxassets/hxcss/views/scan-qr.css">
+
+    <!-- FOOTER MENU -->
+   <!--  <div class="footer" data-menu-load="dash-menu-footer.html"></div>
+ -->
+    <div class="page-content mt-5 pt-3">
+
+       <!--  <div class="page-title page-title-small">
+            <h2>Patient List</h2>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="../hxassets/hximages/avatars/20s.jpg"></div>
+        </div> -->
+         <h3>Patient List</h3>
+         <div class="row g-1 mb-2">
+            <div class="col-md-6 col-sm-12 d-grid gap-2">
+                <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s" data-mdb-ripple-init id="dash-patient-connect-patient">
+                <i class="fa fa-user font-16 me-1"></i> Tap to Connect with a Patient
+              </a>
+            </div>
+              <div class="col-md-6 col-sm-12 d-grid gap-2">
+                <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s" data-mdb-ripple-init id="dash-patient-archive"><i class="fa fa-box-archive font-16 me-1"></i>Archiving</a>  
+
+            </div>
+        </div>
+  
+        
+
+
+	<!-- 	<div class="card card-style">
+            <div class="card-body">
+                <div class="list-group list-custom-small">
+                    <a href="#" class="border-0" id="dash-patient-connect-patient">
+						<i class="fa fa-user font-16 color-blue-dark"></i><span>Tap to Connect with a Patient</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="tab-group-1" class=" bg-transparent mb-0 ">
+			<div class="rounded-s overflow-hidden m-0">
+				<div class="tab-controls tabs-large tabs-rounded" data-highlight="bg-dark-dark">
+                    <a href="#" data-active data-bs-toggle="collapse" data-bs-target="#tab-approved">Connected</a>
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#tab-non-hx">Non HealthXense User</a>
+					<a href="#" data-bs-toggle="collapse" data-bs-target="#tab-pending">Pending</a>
+					<a href="#" data-bs-toggle="collapse" data-bs-target="#tab-rejected">Rejected</a>
+				</div>
+			</div>
+
+            <div data-bs-parent="#tab-group-1" class="collapse show  w-100" id="tab-approved">
+				<div class="mt-3"></div>
+					<div  class="row g-2 mb-2" id="dash-patient-approved-list-div">
+					</div>
+			
+			</div>
+
+            <div data-bs-parent="#tab-group-1" class="collapse w-100" id="tab-non-hx">
+				<div class="mt-3"></div>
+                <div  class="row g-2 mb-2" id="dash-patient-non-hx-list-div">
+                </div>
+
+			
+                <a href="#" class="btn btn-full btn-margins bg-highlight rounded-sm shadow-xl btn-m text-uppercase font-900 d-grid gap-2" id="btn-add-non-hx-patient">Add Patient</a>
+            </div>
+
+			<div data-bs-parent="#tab-group-1" class="collapse w-100" id="tab-pending">
+				<div class="mt-3"></div>
+                <div  class="row g-2 mb-2" id="dash-patient-pending-list-div"></div>
+			</div>
+
+			<div data-bs-parent="#tab-group-1" class="collapse w-100" id="tab-rejected">
+				<div class="mt-3"></div>
+                 <div  class="row g-2 mb-2" id="dash-patient-rejected-list-div"></div>
+		
+			</div>
+
+
+
+		</div>
+
+
+    </div>
+    <!-- end of page content-->
+
+    <!-- Connect with Patient -->
+    <div id="action-sheet-connect-to-patient" class="menu menu-box-modal menu-box-detached rounded-s" data-menu-effect="menu-over" style="width: 90% !important; padding:5px !important; max-width: 400px;">
+        <div class="me-1 ms-1 mt-1 pt-1">
+            <h2 class="font-700 mb-0">Scan QR Code</h2>
+            <p class="font-11 mb-3">
+                To connect to patient please scan the qr code.
+            </p>
+
+            <div id="qr-container" class="container" style="max-width: 400px;">
+		            <div id="my-qr-reader" >
+		            </div>
+		    </div>
+
+            <div class="input-style no-borders has-icon mb-4 mt-3">
+                <i class="fa fa-qrcode"></i>
+                <input type="text" class="form-control" id="dash-profile-patient-id" placeholder="">
+                <label for="dash-profile-patient-id" class="color-highlight font-11 font-500 mt-1">Patient ID</label>
+            </div>
+            <a href="#" class="btn btn-full btn-m shadow-l rounded-s bg-highlight text-uppercase font-900 mt-4 d-grid" id="dash-patient-confirm-conn-request">SEND CONNECTION REQUEST</a>
+        </div>
+    </div>
+
+    <div id="menu-add-patient" class="menu menu-box-modal rounded-m mb-2">
+
+        <input type="hidden" id="patient_id" name="" value="">
+         <div class="content">
+         <h1 class="font-700 mb-2" id="menu-add-patient-title">Add Patient</h1>
+
+         <div class="input-style has-borders hnoas-icon input-style-always-active  mb-4">
+             <input type="text" class="form-control validate-name" id="patient-first-name" placeholder="">
+             <label for="patient-first-name" class="color-highlight font-400 font-13">First Name</label>
+             <i class="fa fa-times disabled invalid color-red-dark"></i>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <em>(required)</em>
+         </div>
+         <div class="input-style has-borders hnoas-icon input-style-always-active mb-4">
+             <input type="text" class="form-control validate-name" id="patient-last-name" placeholder="">
+             <label for="patient-last-name" class="color-highlight font-400 font-13">Last Name</label>
+             <i class="fa fa-times disabled invalid color-red-dark"></i>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <em>(required)</em>
+         </div>
+         <div class="input-style has-borders no-icon mb-4 input-style-always-active">
+             <label for="patient-gender" class="color-highlight">Select Gender</label>
+             <select id="patient-gender" class="form-control">
+                 <option value="" disabled="" selected="">Select Gender</option>
+                 <option value="Male">Male</option>
+                 <option value="Female">Female</option>
+             </select>
+             <span>
+                 <i class="fa fa-chevron-down"></i>
+             </span>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <i class="fa fa-check disabled invalid color-red-dark"></i>
+             <em></em>
+         </div>
+
+         <div class="input-style has-borders no-icon mb-4 input-style-always-active">
+             <input type="date" value="" class="form-control" id="patient-date-of-birth">
+             <label for="patient-date-of-birth" class="color-highlight">Select Date of birth</label>
+             <i class="fa fa-check disabled valid me-4 pe-3 font-12 color-green-dark"></i>
+             <i class="fa fa-check disabled invalid me-4 pe-3 font-12 color-red-dark"></i>
+         </div>
+
+         <h4 class="bolder">Contact Details</h4>
+
+         <div class="input-style has-borders no-icon input-style-always-active mt-2 mb-4">
+             <input type="tel" class="form-control validate-tel" id="patient-phone-number" placeholder="">
+             <label for="patient-phone-number" class="color-highlight font-400 font-13">Phone Number</label>
+             <i class="fa fa-times disabled invalid color-red-dark"></i>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <em>(required)</em>
+         </div>
+
+         <div class="input-style has-borders no-icon input-style-always-active mb-4">
+             <input type="email" class="form-control validate-email" id="patient-email-address" placeholder="">
+             <label for="patient-email-address" class="color-highlight font-400 font-13">Email Address</label>
+             <i class="fa fa-times disabled invalid color-red-dark"></i>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <em>(required)</em>
+         </div>
+         <div class="input-style has-borders no-icon input-style-always-active mb-4">
+             <textarea class="form-control validate-text" id="patient-address" placeholder=""></textarea>
+             <label for="patient-address" class="color-highlight font-400 font-13">Address</label>
+             <i class="fa fa-times disabled invalid color-red-dark"></i>
+             <i class="fa fa-check disabled valid color-green-dark"></i>
+             <em>(required)</em>
+         </div>
+
+
+         <div class="row " style="margin-bottom:0px;">
+             <div class="col-6 ">
+                 <a href="#" class="btn btn-border btn-xl btn-full  text-uppercase font-900 border-red-dark color-red-dark close-menu color-red-dark d-grid gap-2 btn-outline-danger rounded-s" >Close</a>
+             </div>
+             <div class="col-6">
+                 <a id="btn-add-patient" href="#" class="btn btn-full  btn-xl shadow-l rounded-s text-uppercase font-900 bg-highlight d-grid gap-2">Add</a>
+             </div>
+             <div class="col-6">
+                 <a id="btn-update-patient" href="#" class="btn btn-full  btn-xl shadow-l rounded-s text-uppercase font-900 bg-highlight d-grid gap-2">Update</a>
+             </div>
+         </div>
+          <div class="mt-2"></div>
+     </div>
+    </div>
+
+
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-patient.js" ></script>
+<script type="text/javascript" src="../hxassets/hxjs/html5-qrcode.min.js" ></script>
+
+
+
+<!-- archive modal added by emrick 8/15/2024 -->
+<div class="modal top fade" id="archivemodal" tabindex="-1" aria-labelledby="archivemodalLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="archivemodalLabel">Archive List</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-2">
+           <a type="button" class="btn btn-primary myprimarybtnn btn-lg rounded-s d-grid gap-2" data-mdb-ripple-init id="dash-patient-download"><i class="fa fa-download font-16 me-1"></i> Archive Patient List</a>   
+
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">CreatedDate</th>
+                  <th scope="col">CreatedBy</th>
+                  <th scope="col">File</th>
+                </tr>
+              </thead>
+              <tbody id="archive_tbl">
+                    
+              </tbody>
+            </table>
+
+      </div>
+        
+    </div>
+  </div>
+</div>

@@ -1,0 +1,240 @@
+
+.bg-17 {
+    background-image: url(../hximages/17.jpg);
+}
+
+.add-time {
+	font-size: 25px;
+	    margin-bottom: 5px;
+}
+
+#close-clinic-popup{
+	margin-bottom: 20px;
+}
+
+.consultation-date{
+	text-align: right !important;
+}
+
+/* e-signature start */
+.flex-row {
+    display: flex;
+}
+
+canvas#signature-pad {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+button#clear {
+    height: 100%;
+    background: #3BAFDA !important;
+    border: 1px solid transparent;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button#clear span {
+    transform: rotate(90deg);
+    display: block;
+}
+.e-sig-title {
+    text-align: center;
+}
+#e-sig-preview-card{
+    height: 200px;
+   
+}
+
+/* e-signature end */
+
+.dropzone-container {
+    margin: 5px;
+}
+.dropzone-upload {
+    background: white !important;
+    border-radius: 5px !important;
+    border: 2px dashed rgb(0, 135, 247) !important;
+    border-image: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+#menu-medical-header-view, #menu-prc-id-view {
+    width: 90%;
+}
+
+#menu-prc-id-view {
+    max-height: 80%;
+}
+.width-90{
+    width: 90%;
+}
+
+.device-is-android .input-style input[type=date] {
+	padding-top: 0px !important;
+}
+
+#show-e-signature i, #show-prc-viewer i, #show-medical-header-view i {
+    font-size: 25px;
+}
+
+/* clinic start */
+.edit-clinic {
+    z-index: 10;
+    font-size: 25px;
+    position: absolute;
+    right: 20px;
+    color: #6c757d;
+}
+
+.clinic-toggle{
+    right: 90px !important;
+}
+
+#action-sheet-clinic {
+    max-height: 90%;
+    width: 90%;
+}
+
+/* clinic end */
+
+.img-attachement {
+    /* min-height: 150px;
+    width: auto; */
+}
+
+.attachment-record, .attachment-record img {
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.attachement-card {
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+}
+
+#clinic-list p {
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+#clinic-list h5{
+    text-align: left;
+}
+
+#doctor-header-detail {
+    line-height: normal;
+}
+
+/* bp design */
+#bp-row {
+    padding-right: 0px;
+    margin-bottom: 0px;
+}
+
+#bp-systolic-container {
+    padding-left: 12px;
+    width: 45%;
+}
+
+#bp-forwardslash{
+    top: 13%;
+    left: 45%;
+    position: absolute;
+    width:10%
+}
+#bp-diastolic-container {
+    margin-left: 10%;
+    float: right;
+    width: 45%;
+    padding-right: 0px;
+}
+
+.disabled-nav {
+    background-color: #f1f1f1 !important;
+
+}
+
+/* tab for dash-patient*/
+#tab-group-1 a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#menu-add-patient{
+    max-height: 90%;
+    width: 90%;
+}
+
+.fa-edit-patient {
+    z-index: 10;
+    font-size: 20px;
+    position: absolute;
+    right: 45px;
+    color: #6c757d;
+}
+
+.fa-open-patient-info{
+    z-index: 190;
+    font-size: 20px !important;
+    color: #6c757d;
+}
+.print-soap{
+    font-size: 36px;
+}
+
+#eprescription-menu-wizard-rx .print-soap {
+    display: none;
+}
+
+.soap-container button, .vital-signs-label, .vital-signs p, .soap-container p {
+    font-size: 16px !important;
+}
+
+.patient-data-container b, .patient-data-container span {
+    font-size: 16px !important;
+}
+
+#soap-request-content p {
+    font-size: 16px !important;
+}
+
+#soap-diagnosis {
+    font-size: 16px;
+}
+.clinic-item p, .clinic-item h5 {
+    font-size: 16px !important;
+}
+#header-doctor-name {
+    font-size: 20px;
+}
+
+.medical-form p,.medical-form span, .medical-form strong {
+    font-size: 16px;
+}
+.badge{
+    font-size: 14px;
+}
+.md-orders b {
+    font-size: 16px;
+}
+#menu-confirm {
+    z-index: 999;
+}
+
+#glightbox-slider img {
+    width: 100%;
+}
+#menu-select-clinic {
+    max-height: 70%;
+    height: unset;
+}

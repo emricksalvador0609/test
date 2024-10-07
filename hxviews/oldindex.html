@@ -1,0 +1,563 @@
+<!DOCTYPE HTML>
+	<html lang="en">
+	<head>
+	<title>HealthXense Doctor App</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+
+	<!-- Plugins -->
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxplugins/splide-4.1.3/css/splide.min.css">
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxplugins/snackbar/snackbar.min.css">
+    <link rel="stylesheet" type="text/css" href="../hxassets/hxplugins/glightbox/glightbox.css">
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxcss/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxplugins/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../hxassets/hxplugins/dropzone/dropzone.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxcss/style.css">
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxcss/hxcustom.css">
+    <link rel="stylesheet" type="text/css" href="../hxassets/hxcss/print.css">
+
+
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../hxassets/hxplugins/fonts/css/fontawesome-all.min.css">
+
+	<!--Manifest -->
+	<link rel="manifest" href="../_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../hxassets/hximages/icons/favicon.ico">
+
+	<!-- MDB -->
+	<link
+	  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
+	  rel="stylesheet"
+	/>
+
+</head>
+
+<div id="hider" class="menu-hider"></div>
+<body class="theme-light" data-highlight="blue2">
+
+    <!-- Preloaded Div -->
+	<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+	<!-- Dynamic Content -->
+	<div id="hxdynamic-body-content">
+		<div  id="page">
+		</div>
+	</div>
+
+	<!-- Install Prompt for Android -->
+    <div id="menu-install-pwa-android" class="menu menu-box-bottom menu-box-detached rounded-l menu-install-pwa" data-menu-height="350"  data-menu-effect="menu-parallax">
+        <div class="boxed-text-l mt-4">
+            <img class="rounded-l mb-3" src="/hxassets/hximages/icons/favicon.ico" alt="img" width="90">
+            <h4 class="mt-3">HealthXense on your Home Screen</h4>
+            <p>
+                Install HealthXense App on your home screen, and access it just like a regular app. It really is that simple!
+            </p>
+            <a href="#" class="pwa-install btn btn-s rounded-s shadow-l text-uppercase font-900 bg-highlight mb-2">Add to Home Screen</a><br>
+            <a href="#" class="pwa-dismiss close-menu color-gray2-light text-uppercase font-900 opacity-60 font-10">Maybe later</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Install instructions for iOS -->
+    <div id="menu-install-pwa-ios" class="menu menu-box-bottom menu-box-detached rounded-l menu-install-pwa" data-menu-height="320"  data-menu-effect="menu-parallax">
+        <div class="boxed-text-xl mt-4">
+            <img class="rounded-l mb-3" src="/hxassets/hximages/icons/favicon.ico" alt="img" width="90">
+            <h4 class="mt-3">HealthXense on your Home Screen</h4>
+            <p class="mb-0 pb-3">
+                Install HealthXense App on your home screen, and access it just like a regular app. It really is that simple!
+            </p>
+            <div class="clear"></div>
+            <a href="#" class="pwa-dismiss close-menu color-highlight font-800 opacity-80 text-center text-uppercase">Maybe later</a><br>
+            <i class="fa-ios-arrow fa fa-caret-down font-40"></i>
+        </div>
+    </div>
+
+    <!-- Action Modal-->
+    <div id="menu-success" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="305" data-menu-effect="menu-over">
+        <h1 class="text-center mt-4"><i class="fa fa-3x fa-check-circle color-green-dark"></i></h1>
+        <h1 class="text-center mt-3 text-uppercase font-700">All's Good</h1>
+        <p class="boxed-text-l">
+             You can continue with your previous actions.<br> Easy to attach these to success calls.
+        </p>
+        <a href="#" class="close-menu btn btn-m btn-center-m button-s shadow-l rounded-s text-uppercase font-900 bg-green-light">Great</a>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="menu-confirm" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="200" data-menu-effect="menu-over">
+        <h2 class="text-center font-700 mt-3 pt-1" id="menu-confirm-title">Are you sure?</h2>
+        <p class="boxed-text-l" id="menu-confirm-text">
+            You can even use these boxes for confirmations.<br>Any element can trigger them.
+        </p>
+        <div class="row me-3 ms-3" id="menu-confirm-buttons">
+            <div class="col-6">
+                <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-blue-dark menu-confirm-button">CONFIRM</a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-red-dark menu-cancel-button">CANCEL</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-delete-vital" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="200" data-menu-effect="menu-over">
+        <h2 class="text-center font-700 mt-3 pt-1">Delete Vital signs?</h2>
+        <p class="boxed-text-l" >
+            Are you sure you want to delete this record?
+        </p>
+        <div class="row me-3 ms-3" id="menu-confirm-buttons">
+            <div class="col-6">
+                <a id="confirm-delete-vital-sign"  vital-sign-id="" href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-blue-dark menu-confirm-button">CONFIRM</a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-red-dark menu-cancel-button">CANCEL</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templating Modal -->
+	<div id="eprescription-menu-wizard-rx" class="menu menu-box-right" data-menu-width="cover" data-menu-effect="menu-over">
+		<div class="card" data-card-height="100" style="margin-bottom:-70px">
+			<div class="card-overlay bg-highlight opacity-95"></div>
+			<div class="card-overlay dark-mode-tint"></div>
+		</div>
+
+		<div class="card card-style" id="printable-form" >
+			<div class="content pb-3">
+				<div class="text-center">
+
+					<!-- HEADER STANDARD -->
+                    <div id="header">
+                        <div id="doctor-header-detail" class="mb-4">
+        					<h4 id="header-doctor-name"></h4>
+                            <p id="header-doctor-address" class="mb-2"></p>
+        					<!-- <p class="mb-0">Unit 10-1008 Medical Arts Tower, Inc</p>
+        					<p class="mb-0">The Medical City Compund</p>
+        					<p class="mb-0">Ortigas Ave. Pasig City</p> -->
+                        </div>
+
+
+                        <div id="clinic-list" class="row" style="line-height: normal;">
+
+                        </div>
+
+                    </div>
+					<hr>
+
+					<!-- CUSTOMER INFO STANDARD  -->
+                    <div class="row mb-0">
+                        <div class="mb-0 col-3">
+                            <img id="print-patient-dp" src="../hxassets/hximages/avatars/5s.png" class="col-12 rounded-l ms-1" >
+
+                        </div>
+    					<div class="row mb-0 col-9 patient-data-container" style="height: fit-content; text-align: left;">
+    						<!-- <div class="col-6"><b>Date:</b> <span id="dash-order-template-date"></span></div> -->
+                            <div class="col-6 mb-0 "><b>Name:</b> <span id="dash-order-template-patient"></span></div>
+                            <div class="col-6 mb-0 " ><b>Age/Gender:</b> <span id="dash-order-template-age"></span></div>
+                            <div class="col-12 mb-0 "><b>Address:</b> <span id="dash-order-template-address"></span></div>
+    						<!-- <div class="col-6"><b>Sex:</b> <span id="dash-order-template-gender"></span></div> -->
+    					</div>
+                    </div>
+
+					<!-- PRESCRIPTION CONTENT -->
+					<div id="eprescription-content" class="medical-form">
+						<hr>
+						<div class="col-3">
+							<img src="../hxassets/hximages/rx-logo.png" style="width: 50%; float: left; margin-top: 5%; margin-bottom: 5%;">
+						</div>
+
+						<div class="col-9 row mb-0" id="dash-prescription-medicine-list-div" >
+
+						</div>
+
+						<!-- Additional Info -->
+						<!-- <hr>
+						<div class="col-12" style="text-align: left;">
+							<b>Diagnosis:</b> Functional Constipation
+						</div> -->
+
+					</div>
+					<!-- //PRESCRIPTION CONTENT -->
+
+					<!-- MEDICAL CERTIFICATE CONTENT -->
+					<div id="emedical-certificate-content" class="medical-form">
+						<hr>
+						<div class="col-12">
+							<div id="medcert-consultation-date" class="offset-6 col-6 consultation-date"><b>Date:</b> Feb 19, 2024 10AM </div>
+							<br>
+						</div>
+						<div class="col-12">
+							<center><h2 style="font-weight: 500;">Medical Certificate</h2></center>
+							<br>
+						</div>
+
+						<div class="col-12 row mb-0" style="text-align: left; padding-left: 5%;">
+							<p>
+								Patient <strong><span id="medcert-patient-name"></span></strong> <span id="patient-age-gender"></span> &nbsp;had consult <span id="medical-cert-consultation-date-label"></span> and was  diagnosed to have
+								<span id="medcert-diagnosis"></span>. Patient was given medication and was advised rest for <span id="medcert-day-rest"></span>.
+							</p>
+							<div id="medcert-remarks"></div><br>
+							<p>This medical certificate was issued upon the patient's request for whatever purpose it may serve except medico-legal.</p>
+						</div>
+
+					</div>
+
+
+                    <!-- MEDICAL CERTIFICATE CONTENT -->
+                    <div id="emedical-lab-request-content" style="display:none;" class="medical-form">
+                        <hr>
+                        <div class="col-12">
+                            <div id="labrequest-consultation-date" class="offset-6 col-6 consultation-date"><b>Date:</b> Feb 19, 2024 10AM </div>
+                            <br>
+                        </div>
+                        <div class="col-12">
+                            <center><h2 style="font-weight: 500;" id="lab-request-diagnosis"></h2></center>
+                            <br>
+                        </div>
+
+                        <div class="col-12 row mb-0" style="text-align: left; padding-left: 5%;">
+
+
+                            <p id="lab-test-request">
+
+                            </p>
+                            <!-- <p id="lab-test-request-remarks">
+
+                            </p> -->
+                            <p id="lab-diagnosis-remarks">
+
+                            </p>
+                        </div>
+
+                    </div>
+
+
+					<!-- //MEDICAL CERTIFICATE CONTENT -->
+
+					<!-- REFERRAL REQUEST CONTENT -->
+					<div id="ereferral-request-content" class="medical-form">
+						<hr>
+						<div class="row col-12">
+							<div id="ereferral-date" class="offset-6 col-6 consultation-date"><b>Date:</b> Feb 19, 2024 10AM </div>
+							<br>
+						</div>
+						<div class="col-12">
+							<center><h2 style="font-weight: 500;">Referral Letter</h2></center>
+							<br>
+						</div>
+
+						<div class="col-12 row mb-0" style="text-align: left; padding-left: 5%;">
+							<p>Respectfully referring patient <strong><span id="referral-patient-name"></span></strong> <span id="refer-patient-age-gender"></span> to <b><span id="refer-to"></span></b>
+								due to <span id="referral-diagnosis"></span>.
+							</p>
+							<div id="referral-remarks"></div>
+                            <br/><br/>
+							<p>Please further evaluate and manage. Thank you.</p>
+						</div>
+					</div>
+
+                    <div id="soap-request-content" class="medical-form" style="text-align: justify;">
+                        	<hr>
+                            <div class="col-12">
+    							<center><h5 style="font-weight: 500;" id="soap-diagnosis"></h5></center>
+    							<br>
+    						</div>
+                            <div id="soap-content-vital-signs" class="row mb-2"></div>
+                            <div id="soap-content-main" class="row"></div>
+                    </div>
+
+					<!-- //PRESCRIPTION CONTENT -->
+
+					<!-- Footer Standard -->
+					<div id="form-footer" class="col-12 row">
+						<div class="col-4" id="eprescription-footer-content" style="visibility:hidden;">
+							<div class="col-12 mb-3" style="text-align: left;">
+								<b>Follow up:</b> Anytime for any concerns.
+							</div>
+						</div>
+						<div class="col-8" style="text-align: right;">
+                            <img id="doctor-sig" style="width: 150px; height: auto; display: block; margin-left: auto;" />
+							<strong id="doctor_name">Doctor Name, MD, FPCP</strong>
+							<p id="doctor_license_no" class="mb-0">LIC NO: XXXX</p>
+							<p id="doctor_ptr_no" class="mb-0">PTR NO: XXXX</p>
+							<p id="sig_no_2" class="mb-0">S2 NO: XXXX</p>
+						</div>
+                        <br>
+                        <p>Powered by HealthXense</p>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Buttons -->
+		<div class="row medical-buttons" id="dash-prescription-buttons">
+			<div class="col-6">
+				<a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-blue-light color-blue-light" id="dash-prescription-edit-medication">Edit Medication</a>
+			</div>
+			<div class="col-6">
+				<a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-prescription-cofirm-proceed-rx">CONFIRM & PROCEED</a>
+			</div>
+		</div>
+
+
+        <div class="row medical-buttons" id="dash-standard-buttons">
+			<div class="col-6">
+                <a id="btn-print-form" href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-blue-light color-blue-light">Print</a>
+			</div>
+			<div class="col-6">
+                <a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-red-dark color-red-dark close-menu color-red-dark">Close</a>
+			</div>
+		</div>
+
+
+        <div class="row medical-buttons" id="dash-preview-buttons" style="display:none;">
+			<div class="col-6">
+                <a id="btn-medical-edit-preview" previous-menu="" href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-blue-light color-blue-light">Edit</a>
+			</div>
+			<div class="col-6">
+                <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" medical-form-type="" id="dash-medical-form-save">CONFIRM & SAVE</a>
+			</div>
+		</div>
+
+        <!-- Buttons -->
+        <!-- <div class="row" id="preview-buttons">
+            <div class="col-6">
+                <a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-blue-light color-blue-light" id="dash-prescription-add-medication">Add Medication</a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-prescription-confirm-review">REVIEW</a>
+            </div>
+        </div> -->
+
+	</div>
+
+		<!-- Global pop-up -->
+    <div id="modal-success" class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-height="305"
+         data-menu-effect="menu-over">
+        <h1 class="text-center mt-4"><i class="fa fa-3x fa-check-circle color-green-dark"></i></h1>
+        <h1 class="text-center mt-3 text-uppercase font-700 modal-title"></h1>
+        <p class="boxed-text-l modal-message">
+        </p>
+        <a href="#" class="close-menu btn btn-m btn-center-m button-s shadow-l rounded-s text-uppercase font-900 bg-green-light">OK</a>
+    </div>
+
+    <div id="modal-warning" class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-height="305"
+         data-menu-effect="menu-over">
+        <h1 class="text-center mt-4"><i class="fa fa-3x fa-times color-red-dark"></i></h1>
+        <h1 class="text-center mt-3 text-uppercase font-700 modal-title"></h1>
+        <p class="boxed-text-l modal-message">
+
+        </p>
+        <a href="#" class="close-menu btn btn-m btn-center-m button-s shadow-l rounded-s text-uppercase font-900 bg-red-light">Close</a>
+    </div>
+
+    <!--clinic schedule notif-->
+      <div id="schedule-notif" class="menu menu-box-modal rounded-m"
+         data-menu-width="310">
+         <h1 class="text-center font-700 mt-3 pt-2 ">Clinic Schedule</h1>
+         <p  id="schedule-text" class="boxed-text-xl mb-2">
+
+         </p>
+         <div class="row me-3 ms-3 mb-2">
+            <div class="col-6">
+                <a id="accept-clinic-popup" href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-green-dark close-clinic-popup" clinic-id="">Yes</a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-red-dark close-clinic-popup">No</a>
+            </div>
+        </div>
+<!--         <a id="close-clinic-popup" href="#" class="external-link btn btn-center-m btn-sm shadow-l rounded-s text-uppercase font-900 bg-green-dark">Close</a>
+-->
+		</div>
+
+        <!-- Confirmation Modal -->
+        <div id="menu-select-clinic" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-effect="menu-over">
+            <h2 class="text-center font-700 mt-3 pt-1" id="menu-confirm-title">Select Active Clinic</h2>
+            <p class="boxed-text-l" id="menu-confirm-text">
+                To proceed please select active Clinic
+            </p>
+            <div class="card card-style">
+              <div class="content mb-2">
+                 <!-- <p>
+                    Set your preferences here, notifications will be receive via SMS, Email and Phone.
+                 </p> -->
+                 <div class="list-group list-custom-small" id="dash-popup-clinic-div">
+
+                 </div>
+                </div>
+           </div>
+
+            <div class="row me-3 ms-3">
+                <div class="col-6">
+                    <a id="next-clinic-popup" href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-blue-dark menu-confirm-button">NEXT</a>
+                </div>
+                <div class="col-6">
+                    <a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-red-dark color-red-dark close-menu color-red-dar">Close</a>
+                </div>
+
+            </div>
+        </div>
+
+	<!--Android Toast - Success Notification-->
+	<div id="toast-notification" data-dismiss="toast-notification" data-bs-delay="3000" data-bs-autohide="true" class="notification notification-material bg-dark-dark fade hide">
+        <span class="notification-icon">
+            <i class="fa fa-comment color-green-light"></i>
+            <em class="color-green1-light">Action Notification</em>
+        </span>
+        <h1 class="font-20 color-white" id="toast-notification-title">Notification Title</h1>
+        <p class="pb-1 mt-n1" id="toast-notification-message">
+            I'm a notification. I show at the top of the page.
+        </p>
+    </div>
+
+    <div id="toast-notification-error" data-dismiss="notification-2" data-bs-delay="3000" data-bs-autohide="true" class="notification notification-android bg-red-dark">
+        <i class="fa fa-warning bg-red-dark"></i>
+        <h1 class="font-20 color-white" id="error-toast-notification-title">Error</h1>
+        <p class="pb-0" id="error-toast-notification-message">
+            I'm a notification. I show at the top of the page.
+        </p>
+    </div>
+
+    <!-- Loader html -->
+    <div id="global-loader-div" style="display: none;">
+		<div class="content pt-3 pb-3" id="dash-global-search-loader">
+	        <div class="d-flex justify-content-center">
+	            <div class="spinner-border color-blue-dark" role="status">
+	            </div>
+	        </div>
+		</div>
+	</div>
+
+
+    <!-- Tips Menu 1-->
+    <div id="menu-gallery" class="menu menu-box-modal menu-box-detached rounded-m width-90"
+
+         data-menu-effect="menu-over">
+
+         <div class="card card-style mt-5 attachement-card">
+             <div id="attachment-container" class="row text-center row-cols-3">
+             </div>
+         </div>
+
+          <div class="col-12">
+              <a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-red-dark color-red-dark close-menu color-red-dark">Close</a>
+          </div>
+    </div>
+
+
+	<!-- load jQuery -->
+	<script src="../hxassets/hxjs/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="../hxassets/hxjs/jquery.validate.min.js" ></script>
+
+	<!-- MDB -->
+	<script
+	  type="text/javascript"
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"
+	></script>
+
+	<!-- PWA -->
+	<script src="../hxassets/hxplugins/jsstoresqlitelib/jsstore.min.js"></script>
+	<script src="../hxassets/hxplugins/jsstoresqlitelib/jsstore.worker.min.js"></script>
+
+	<!-- SQLite -->
+	<script type="text/javascript" src="../hxassets/hxjs/pos_sqlitedb.js" ></script>
+
+	<!-- JWT -->
+	<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/core.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/enc-base64.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/hmac.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxplugins/crypto-js/src/sha256.js" ></script>
+
+	<!-- Plugins -->
+	<script type="text/javascript" src="../hxassets/hxplugins/splide-4.1.3/js/splide.min.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxplugins/snackbar/snackbar.min.js" ></script>
+
+	<script type="text/javascript" src="../hxassets/hxplugins/glightbox/glightbox.js" ></script>
+    <script type="text/javascript" src="../hxassets/hxplugins/galleryViews/gallery-views.js" ></script>
+    <script type="text/javascript" src="../hxassets/hxplugins/glightbox/glightbox-call.js" ></script>
+
+    <script type="text/javascript" src="../hxassets/hxplugins/print/printThis.js" ></script>
+
+
+    <script type="text/javascript" src="../hxassets/hxjs/signature_pad.min.js" ></script>
+
+	<!-- Custom -->
+	<script type="text/javascript" src="../hxassets/hxjs/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxplugins/select2/select2.min.js" ></script>
+    <script type="text/javascript" src="../hxassets/hxplugins/dropzone/dropzone.min.js" ></script>
+
+
+	<script type="text/javascript" src="../hxassets/hxjs/g_function.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxjs/pwa_function.js" ></script>
+	<script type="text/javascript" src="../hxassets/hxjs/views/common-function.js" ></script>
+
+
+
+	<script language="Javascript">
+
+		$(document).ready(function(){
+
+			let current_page = getUrlParameter('hxcurrentpage');
+
+
+			//welcome screen
+			if(current_page === false){
+				$("#page").load("welcome-screen.html");
+			//other pages
+			}else{
+				$("#page").load(current_page + ".html");
+				$(".menu-install-pwa").remove();
+			}
+
+			setTimeout(function(){
+				initialize_pwafunc();
+			}, 1000);
+
+			setTimeout(function(){
+
+				let active_footer_nav = $("#footer-bar").find("a[data-page-name='"+current_page+"']");
+
+				active_footer_nav.find("strong").remove();
+
+				//dashboard footer highlight
+				if( active_footer_nav.length ){
+					active_footer_nav.addClass("active-nav");
+					active_footer_nav.append('<strong></strong>');
+				}
+
+			}, 1500);
+
+            //get_verification_status
+
+            if(current_page != "auth-login"){
+                is_logged_in(session_table, false).then((prof_data) => {
+                    if(typeof prof_data == "object" && prof_data.hasOwnProperty(0)){
+                        setTimeout(function(){
+                            get_verification_status();
+                        }, 2000);
+                    }
+                });
+            }
+
+		});
+
+	</script>
+
+</body>

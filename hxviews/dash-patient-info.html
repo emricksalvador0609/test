@@ -1,0 +1,782 @@
+<!-- FOOTER MENU -->
+<!-- <div class="footer" data-menu-load="dash-menu-footer.html"></div> -->
+
+<div class="page-content mt-5 pt-3 pb-0">
+
+   <!--  <div class="page-title page-title-small">
+        <h2><a href="?hxcurrentpage=dash-patient" data-back-button><i class="fa fa-arrow-left"></i></a>Patient Info</h2>
+    </div>
+    <div class="card header-card shape-rounded" data-card-height="150">
+        <div class="card-overlay bg-highlight opacity-95"></div>
+        <div class="card-overlay dark-mode-tint"></div>
+    </div> -->
+
+    <h3>Patient Info</h3>
+    <div class="card card-style mb-2 ms-0" >
+        <div class="content">
+            <div class="d-flex">
+                <div>
+                    <img id="patient-profile-image" src="../hxassets/hximages/avatars/5s.png" width="50" class="me-3 bg-highlight rounded-xl">
+                </div>
+                <div>
+                    <h1 class="mb-0 pt-1" id="patient-fullname">Juan Dela Cruz</h1>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row mb-0 gx-0">
+
+				<input type="hidden" id="dash-patient-id">
+				<input type="hidden" id="dash-patient-formal-id">
+
+                 <div class="col-md-6">
+                    <div class="row mb-0">
+                    <div class="col-4">
+                    <p class="color-theme font-700">Age</p>
+                    </div>
+                    <div class="col-8">
+                        <p class="font-400" id="patient-age"></p>
+                    </div>
+
+                    <div class="col-4">
+                        <p class="color-theme font-700">Gender</p>
+                    </div>
+                    <div class="col-8">
+                        <p class="font-400" id="patient-gender"></p>
+                    </div>
+                    <div class="col-4">
+                    <p class="color-theme font-700">Birthday</p></div>
+                     <div class="col-8">
+                    <p class="font-400" id="patient-birthday"></p>
+                    </div>
+                
+                </div>
+                 </div>
+
+                 <div class="col-md-6">
+                    <div class="row mb-0">
+                    
+
+                    <div class="col-4">
+                        <p class="color-theme font-700">Contact #</p>
+                    </div>
+                   
+                    <div class="col-8">
+                        <p class="font-400" id="patient-contact-no"></p>
+                    </div>
+                    
+                    <div class="col-4">
+                        <p class="color-theme font-700">E-mail</p>
+                    </div>
+                    <div class="col-8">
+                        <p class="font-400" id="patient-email"></p>
+                    </div>
+
+                    <div class="col-4">
+                        <p class="color-theme font-700">Address</p></div>
+                    <div class="col-8">
+                        <p class="font-400" id="patient-address"></p></div>
+                      </div>  
+                     </div> 
+                 </div>
+
+                
+
+                <!-- <div class="col-4"><p class="color-theme font-700">Civil Status</p></div>
+                <div class="col-8"><p class="font-400" id="patient-civil-status"></p></div> -->
+
+                <!-- <div class="col-4"><p class="color-theme font-700">Religion</p></div>
+                <div class="col-8"><p class="font-400" id="patient-religion"></p></div> -->
+
+                
+                
+            </div>
+
+        </div>
+    </div>
+
+      <div class="row g-1 mt-0 mb-2 ms-2">
+            <div class="col-md-6 col-sm-12 ">
+                <a type="button" class="btn btn-primary myprimarybtnn rounded-s" data-mdb-ripple-init id="new-medical-record">
+                <i class="fa fa-add font-16 "></i> Medical record
+              </a>
+               <a type="button" class="btn btn-primary myprimarybtnn  rounded-s" data-mdb-ripple-init id="dash-medical-record-vital-stats"><i class="fa fa-add font-16 "></i> Vital Signs</a>  
+            </div>
+            
+        </div>
+
+
+    <div class=" pb-0">
+        <div class="content mt-0 ms-0" id="tab-group-1">
+            <div class="tab-controls tabs-small tabs-rounded" data-highlight="bg-highlight">
+				<a href="#" data-active data-bs-toggle="collapse" data-bs-target="#medical-records">Medical Records</a>
+                <a href="#" data-bs-toggle="collapse" data-bs-target="#vital-stats-tab">Vital Signs</a>
+            </div>
+            <div class="clearfix mb-3"></div>
+
+            <div data-bs-parent="#tab-group-1" class="p-2 card collapse show w-100" id="medical-records">
+                <div class="accordion mt-2" id="accordion-1">
+
+                    <div class="mb-0">
+                        <center><i>Fetching Records...</i></center>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div data-bs-parent="#tab-group-1" class="collapse w-100" id="vital-stats-tab">
+
+                <div id="vital-signs-timeline" class="row timeline-body timeline-body-center mt-n1" style="background-color: transparent;">
+			        <div class="timeline-deco"></div>
+
+			    </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<!-- end of page content-->
+
+
+<!-- Vital Stats -->
+
+
+
+<div class="modal top fade " id="dash-medical-record-vital-stats-form" tabindex="-1" aria-labelledby="dash-medical-record-vital-stats-formLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dash-medical-record-vital-stats-formLabel">Vital Signs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-2">
+
+         <label for="form1ac" class="font-700 font-10 mb-1">Blood Pressure (mmHg)</label>
+
+ <!--        <div id="bp-row" class="row" style="padding-right:0px">
+            <div class="col-md-6" style="padding-top: 10px;">
+              <div class="input-style input-style-always-active has-borders no-icon mb-0">
+                    <input type="number" class="form-control vital-signs-input" id="vs-bp-systolic">
+                    <label for="vs-bp-systolic" class="text-uppercase  text-dark fw-bold">BP Systolic</label>
+                </div>
+
+                
+
+            </div> -->
+
+            <!-- <div  class="col-1 d-flex align-items-center">
+                <img class="img-fluid" src="../hxassets/hximages/icons/slash.png"  height="10"/>
+            </div> -->
+       <!--      <div  class="col-md-6" style="padding-top: 10px;">
+                <div class="input-style input-style-always-active has-borders no-icon mb-0">
+                    <input type="number" class="form-control vital-signs-input" id="vs-bp-diastolic">
+                    <label for="vs-bp-systolic" class="color-theme  text-uppercase font-700 font-10 text-dark fw-bold">BP Diastolic</label>
+                    <i class="fa-solid fa-slash-forward"></i>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="input-group mb-0 d-flex justify-content-center ">
+            <div class="input-style input-style-always-active has-borders no-icon mb-0">
+                <input type="number" class="form-control vital-signs-input" id="vs-bp-systolic">
+                <label for="vs-bp-systolic" class="text-uppercase  text-dark fw-bold">BP Systolic</label>
+            </div>
+
+            <span class="input-group-text border-0">/</span>
+            <div class="input-style input-style-always-active has-borders no-icon mb-0">
+                <input type="number" class="form-control vital-signs-input" id="vs-bp-diastolic">
+                <label for="vs-bp-systolic" class="color-theme  text-uppercase  text-dark fw-bold">BP Diastolic</label>
+                <i class="fa-solid fa-slash-forward"></i>
+            </div>
+        </div>
+
+
+        <div class="row mb-0">
+        <div class="col-md-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control vital-signs-input" id="vs-hr">
+                <label for="vs-hr" class="color-theme font-700 font-10 text-dark fw-bold">Heart Rate (bpm)</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control vital-signs-input" id="vs-rr">
+                <label for="vs-rr" class="color-theme font-700 font-10">Resp Rate (cpm)</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control vital-signs-input" id="vs-temp">
+                <label for="vs-temp" class="color-theme  font-700 font-10 text-dark fw-bold">Temperature (°C) </label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control vital-signs-input" id="vs-o2">
+                <label for="vs-o2" class="color-theme font-700 font-10 text-dark fw-bold">O2 Saturation (%)</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control bmi-calculate vital-signs-input" id="vs-ht" disab>
+                <label for="vs-ht" class="color-theme font-700 font-10 text-dark fw-bold">Height (m)</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control bmi-calculate vital-signs-input" id="vs-wt">
+                <label for="vs-wt" class="color-theme font-700 font-10 text-dark fw-bold">Weight (kg)</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-3">
+                <input type="number" class="form-control" id="vs-bmi" readonly disabled>
+                <label for="vs-bmi" class="color-theme font-700 font-10 text-dark fw-bold">BMI</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-0">
+                <input type="text" class="form-control" id="vs-bmi-class" readonly disabled>
+                <label for="vs-bmi-class" class="color-theme font-700 font-10 text-dark fw-bold">BMI Class</label>
+            </div>
+        </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-save-vital-signs d-grid gap-2">CONFIRM & SAVE</a>
+
+        <button type="button" class="btn btn-secondary d-grid gap-2" data-bs-dismiss="modal">
+          Close
+        </button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<div id="dash-medical-record-vital-stats-form" class="menu menu-box-bottom menu-box-detached rounded-m  position-absolute top-50 start-50  " data-menu-height="900" data-menu-width="400" data-menu-effect="menu-over" style="overflow-y:  auto;  max-height: 100vh; ">
+
+    <h1 class="text-center font-700 mt-3 pt-2">Vital Signs</h1>
+    <div class="divider"></div>
+
+    <div class="content pb-3 row p-4">
+
+        <label for="form1ac" class="font-700 font-10 mb-1">Blood Pressure (mmHg)</label>
+
+        <div id="bp-row" class="row" style="padding-right:0px">
+            <div class="col-5" style="padding-top: 10px;">
+                <div class="input-style input-style-always-active has-borders no-icon ">
+                    <input type="number" class="form-control vital-signs-input" id="vs-bp-systolic">
+                    <label for="vs-bp-systolic" class="color-theme opacity-50 text-uppercase font-700 font-10">BP Systolic</label>
+                </div>
+
+            </div>
+
+            <div  class="col-1">
+                <img src="../hxassets/hximages/icons/slash.png"  height="60"/>
+            </div>
+            <div  class="col-6" style="padding-top: 10px;">
+                <div class="input-style input-style-always-active has-borders no-icon ">
+                    <input type="number" class="form-control vital-signs-input" id="vs-bp-diastolic">
+                    <label for="vs-bp-systolic" class="color-theme opacity-50 text-uppercase font-700 font-10">BP Diastolic</label>
+                    <i class="fa-solid fa-slash-forward"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control vital-signs-input" id="vs-hr">
+                <label for="vs-hr" class="color-theme opacity-50 font-700 font-10">Heart Rate (bpm)</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control vital-signs-input" id="vs-rr">
+                <label for="vs-rr" class="color-theme opacity-50 font-700 font-10">Resp Rate (cpm)</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control vital-signs-input" id="vs-temp">
+                <label for="vs-temp" class="color-theme opacity-50 font-700 font-10">Temperature (°C) </label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control vital-signs-input" id="vs-o2">
+                <label for="vs-o2" class="color-theme opacity-50 font-700 font-10">O2 Saturation (%)</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control bmi-calculate vital-signs-input" id="vs-ht" disab>
+                <label for="vs-ht" class="color-theme opacity-50 font-700 font-10">Height (m)</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control bmi-calculate vital-signs-input" id="vs-wt">
+                <label for="vs-wt" class="color-theme opacity-50 font-700 font-10">Weight (kg)</label>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="number" class="form-control" id="vs-bmi" readonly>
+                <label for="vs-bmi" class="color-theme opacity-50 font-700 font-10">BMI</label>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="input-style input-style-always-active has-borders no-icon mb-4">
+                <input type="text" class="form-control" id="vs-bmi-class" readonly>
+                <label for="vs-bmi-class" class="color-theme opacity-50 font-700 font-10">BMI Class</label>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-save-vital-signs">CONFIRM & SAVE</a>
+            <a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12">Close</a>
+
+        </div>
+
+    </div>
+
+    <p class="text-center font-10 mb-0">HealthXense <span class="copyright-year"></span> - Enabled. All rights reserved.</p>
+
+</div>
+ -->
+
+
+
+    <!-- Referral Letter -->
+<div class="modal top fade " id="dash-medical-record-referral-letter-form" tabindex="-1" aria-labelledby="dash-medical-record-referral-letter-formLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dash-medical-record-referral-letter-formLabel">Referral Letter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-2">
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Diagnosis</h6>
+
+            <div class="col-12" id="dash-medical-record-referral-letter-list" style="margin-left: 2%;"></div>
+
+            <div class="divider"></div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Refer To</h6>
+            <div class="input-style has-borders">
+                <input type="text" class="form-control" id="dash-medrecord-refer-to">
+            </div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Reason for Referral</h6>
+            <div class="input-style has-borders no-icon mb-4">
+                <input type="text" class="form-control" id="dash-medrecord-remarks"></input>
+            </div>
+
+
+      </div>
+      <div class="modal-footer ">
+         <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-review-referral-letter">Review</a>
+       <button type="button" class="btn btn-secondary d-grid gap-2" data-bs-dismiss="modal">
+          Close
+        </button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!--   <div id="dash-medical-record-referral-letter-form" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="520" data-menu-effect="menu-over">
+
+		<h1 class="text-center font-700 mt-3 pt-2">Referral Letter</h1>
+		<div class="divider"></div>
+
+		<div class="content pb-3">
+
+			<h6 class="font-13 ps-1 font-500 mb-1">Diagnosis</h6>
+
+			<div class="col-12" id="dash-medical-record-referral-letter-list" style="margin-left: 2%;"></div>
+
+			<div class="divider"></div>
+
+			<h6 class="font-13 ps-1 font-500 mb-1">Refer To</h6>
+			<div class="input-style has-borders">
+				<input type="text" class="form-control" id="dash-medrecord-refer-to">
+			</div>
+
+			<h6 class="font-13 ps-1 font-500 mb-1">Reason for Referral</h6>
+			<div class="input-style has-borders no-icon mb-4">
+				<input type="text" class="form-control" id="dash-medrecord-remarks"></input>
+			</div>
+			<div class="col-12"> -->
+				<!-- <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-save-referral-letter">CONFIRM & SAVE</a> -->
+         <!--        <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase d-grid gap-2" id="dash-medical-record-review-referral-letter">Review</a>
+                <a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12 d-grid gap-2">Close</a>
+			</div>
+		</div>
+
+        <p class="text-center font-10 mb-0">HealthXense <span class="copyright-year"></span> - Enabled. All rights reserved.</p>
+
+    </div> -->
+
+
+    <div class="modal top fade " id="dash-medical-record-medical-certificate-form" tabindex="-1" aria-labelledby="dash-medical-record-medical-certificate-formLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dash-medical-record-medical-certificate-formLabel">Medical Certificate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-2">
+
+        <h6 class="font-13 ps-1 font-500 mb-1">Diagnosis</h6>
+            <div class="col-12" id="dash-medical-record-medcert-diagnosis-list" style="margin-left: 2%;"></div>
+
+            <div class="divider"></div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Consultation Date</h6>
+            <div class="input-style has-borders">
+                <input type="date" class="form-control" id="dash-medrecord-consultation-date">
+            </div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">No. of Rest Day(s)</h6>
+            <div class="input-style has-borders">
+                <input type="text" class="form-control" id="dash-medrecord-no-rest-day">
+            </div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Remarks</h6>
+            <div class="input-style has-borders no-icon mb-4">
+                <input type="text" class="form-control" id="dash-medical-record-remarks"></input>
+            </div>
+
+      </div>
+      <div class="modal-footer">
+         <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase d-grid gap-2" id="dash-medical-record-review-medical-certificate">Review</a>
+        <button type="button" class="btn btn-secondary d-grid gap-2" data-bs-dismiss="modal">
+          Close
+        </button>
+
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Medical Certificate -->
+  <!--   <div id="dash-medical-record-medical-certificate-form" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="650" data-menu-effect="menu-over">
+
+        <h1 class="text-center font-700 mt-3 pt-2">Medical Certificate</h1>
+        <div class="divider"></div>
+
+        <div class="content pb-3">
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Diagnosis</h6>
+            <div class="col-12" id="dash-medical-record-medcert-diagnosis-list" style="margin-left: 2%;"></div>
+
+            <div class="divider"></div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Consultation Date</h6>
+            <div class="input-style has-borders">
+                <input type="date" class="form-control" id="dash-medrecord-consultation-date">
+            </div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">No. of Rest Day(s)</h6>
+            <div class="input-style has-borders">
+                <input type="text" class="form-control" id="dash-medrecord-no-rest-day">
+            </div>
+
+            <h6 class="font-13 ps-1 font-500 mb-1">Remarks</h6>
+            <div class="input-style has-borders no-icon mb-4">
+                <input type="text" class="form-control" id="dash-medical-record-remarks"></input>
+            </div>
+            <div class="col-12">
+             <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-save-medical-certificate">CONFIRM & SAVE</a> -->
+               <!--  <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-review-medical-certificate">Review</a>
+                <a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12">Close</a>
+            </div>
+        </div>
+
+        <p class="text-center font-10 mb-0">HealthXense <span class="copyright-year"></span> - Enabled. All rights reserved.</p> -->
+
+   <!--  </div> -->
+
+
+        <!-- Lab Test Request -->
+        <div id="dash-medical-record-laboratory-request-form" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="600" data-menu-effect="menu-over">
+
+    		<h1 class="text-center font-700 mt-3 pt-2">Lab Test Request</h1>
+    		<div class="divider"></div>
+
+    		<div class="content pb-3">
+
+    			<div class="col-12" id="dash-medical-record-labtest-list" style=""></div>
+
+    			<div class="divider"></div>
+
+
+
+    			<div class="input-style input-style-always-active has-borders no-icon my-4" style="display:none;">
+    				<input type="date" class="form-control" id="dash-medrecord-lab-test-ffup-date">
+    				<label for="dash-medrecord-lab-test-ffup-date" class="color-highlight">Follow-up Date</label>
+    			</div>
+
+    			<div class="col-12" id="dash-medical-record-labtest-laborder-list" style="">
+                    <div class="mb-0">
+                        <button id="btn-show-simple-lab-order" class="btn accordion-btn no-effect color-theme collapsed" data-bs-toggle="collapse" data-bs-target="#dash-medrecord-basiclist-laborder" aria-expanded="false" style="width: 100%; padding-left: 0;">
+                            <h4>Basic List of Selections</h4>
+                            <i class="fa fa-chevron-down font-10 accordion-icon" style="margin-top: -20px;"></i>
+                        </button>
+                        <div id="dash-medrecord-basiclist-laborder" class="collapse w-100" style="">
+                            <div class="lab-order-container row"></div>
+                            <div class="pt-1 pb-2 ps-3 pe-3 row">
+                                <div class="col-12 mt-3">
+                                    <a href="#" id="confirm-basic-laborder" class="btn btn-border btn-m btn-full mb-3 rounded-xl text-uppercase font-900 border-blue-dark color-blue-dark bg-theme btn-outline-primary d-grid gap-2">Confirm Selection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-0">
+                        <button id="btn-show-comprehensive-lab-order" class="btn accordion-btn no-effect color-theme collapsed" data-bs-toggle="collapse" data-bs-target="#dash-medrecord-comprehensive-laborder" aria-expanded="false" style="width: 100%; padding-left: 0;">
+                            <h4>Comprehensive List of Selections</h4>
+                            <i class="fa fa-chevron-down font-10 accordion-icon" style="margin-top: -20px;"></i>
+                        </button>
+
+                        <div id="dash-medrecord-comprehensive-laborder" class="collapse w-100" style="">
+                            <div class="lab-order-container row"></div>
+                            <div class="pt-1 pb-2 ps-3 pe-3 row">
+                                <div class="col-12 mt-3">
+                                    <a href="#" id="confirm-comprehensive-laborder" class="btn btn-border btn-m btn-full mb-3 rounded-xl text-uppercase font-900 border-blue-dark color-blue-dark bg-theme btn btn-outline-primary d-grid gap-2">Confirm Selection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h6 class="font-13 ps-1 font-500 mb-1">Remarks</h6>
+                <div class="input-style has-borders no-icon mb-4">
+                    <input type="text" class="form-control" id="dash-medrecord-lab-test-remark"></input>
+                </div>
+
+    			<!-- Buttons -->
+    			<div class="row">
+    				<div class="col-6">
+    					<a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-xl mb-3 text-uppercase font-700 border-blue-light color-blue-light d-grid gap-2 btn btn-outline-primary" id="dash-prescription-add-lab-order">Add Lab Order</a>
+    				</div>
+    				<div class="col-6">
+    					<!-- <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase" id="dash-medical-record-save-laboratory-test">CONFIRM & SAVE</a> -->
+                        <a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase d-grid gap-2" id="dash-medical-record-review-lab-request">Review</a>
+
+    				</div>
+                    <div class="col-12">
+                        <a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12 d-grid gap-2">Close</a>
+                    </div>
+    			</div>
+
+    		</div>
+
+            <p class="text-center font-10 mb-0">HealthXense <span class="copyright-year"></span> - Enabled. All rights reserved.</p>
+
+        </div>
+
+        <!-- MD Orders -->
+        <div id="menu-order-list" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="500" data-menu-effect="menu-over">
+
+            <h1 class="text-center font-700 mt-3 pt-2">Select an MD Order to Create</h1>
+            <p class="boxed-text-xl under-heading">
+                <!-- Share our page with the world, increase <br>
+                your page exposure with the world. -->
+            </p>
+            <input id="medical-id-hidden" type="hidden" />
+            <input id="medical-record-diagnosis-hidden" type="hidden" />
+            <input id="medical-record-date-hidden" type="hidden" />
+
+            <div class="list-group list-custom-small ps-1 pe-3">
+                <a href="#" id="dash-medical-record-eprescription" class="external-link shareToFacebook">
+                    <i class="font-10 color-google" style="width: 10px;"></i>
+                    <span class="font-13">e-Prescription</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <a href="#" id="dash-medical-record-laboratory-request" class="external-link shareToFacebook">
+                    <i class="font-10 color-google" style="width: 10px;"></i>
+                    <span class="font-13">Laboratory Request</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <a href="#" id="dash-medical-record-medical-certificate" class="external-link shareToTwitter">
+                    <i class="font-10 color-google" style="width: 10px;"></i>
+                    <span class="font-13">Medical Certificate</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <a href="#" id="dash-medical-record-referral-letter" class="external-link shareToLinkedIn">
+                    <i class="font-10 color-google" style="width: 10px;"></i>
+                    <span class="font-13">Referral Letter</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+
+                <a href="#" id="dash-medical-record-attachement" class="external-link shareToLinkedIn">
+                    <i class="font-10 color-google" style="width: 10px;"></i>
+                    <span class="font-13">Laboratory Result</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+
+            <br>
+            <p class="text-center font-10 mb-0">HealthXense <span class="copyright-year"></span> - Enabled. All rights reserved.</p>
+
+        </div>
+
+        <!-- Medical Record Wizard 1 -->
+    	<div id="new-medical-record-wizard-1" class="menu menu-box-left" data-menu-width="cover" data-menu-effect="menu-over">
+    		<div class="card" data-card-height="230" style="margin-bottom:-70px">
+    			<div class="card-center text-center">
+    				<h1 class="color-white font-600 mb-n1 mt-n4 font-32">Medical Record Form</h1>
+    				<br>
+    				<!--<h4 class="color-white">SOAP Note</h4>-->
+    			</div>
+    			<div class="card-overlay bg-highlight opacity-95"></div>
+    			<div class="card-overlay dark-mode-tint"></div>
+    		</div>
+    		<div class="card card-style">
+    			<div class="content pb-3">
+
+    				<h5 class="font-600 opacity-40 ml-1">SUBJECTIVE</h5>
+
+    				<h6 class="font-13 ps-1 font-500 mb-1">Chief Complaint</h6>
+    				<div class="input-style has-borders no-icon mb-4">
+    					<textarea id="dash-medrecord-chief-complaint" id="dash-medrecord-chief-complaint"></textarea>
+    				</div>
+
+    				<h6 class="font-13 ps-1 font-500 mb-1">History of Present Illness</h6>
+    				<div class="input-style has-borders no-icon mb-4">
+    					<textarea id="dash-medrecord-history" id="dash-medrecord-history"></textarea>
+    				</div>
+
+    				<h5 class="font-600 opacity-40 ml-1">OBJECTIVE</h5>
+
+    				<h6 class="font-13 ps-1 font-500 mb-1">Physical Exam Finding</h6>
+    				<div class="input-style has-borders no-icon mb-4">
+    					<textarea id="dash-medrecord-remark" id="dash-medrecord-remark"></textarea>
+    				</div>
+
+    				<h5 class="font-600 opacity-40 ml-1">ASSESSMENT</h5>
+
+    				<!-- Search for Diagnosis -->
+    				<h6 class="font-13 ps-1 font-500 mb-1">Diagnosis</h6>
+    				<div class="search-box search-color shadow-xl border-0 bg-dark-dark rounded-l bottom-0" style="margin-bottom: 3%;">
+    	                <i class="fa fa-search"></i>
+    	                <input type="text" class="border-0" placeholder="Search Diagnosis..." id="dash-medrecord-search-diagnosis">
+    	            </div>
+
+    	            <div class="content pt-3 pb-3" id="dash-medrecord-search-diagnosis-loader">
+    	            	<div class="d-flex justify-content-center">
+    	                    <div class="spinner-border color-blue-dark" role="status">
+    	                    </div>
+    	                </div>
+    				</div>
+
+    	            <div class="search-results disabled-search-list" id="dash-medrecord-searched-diagnosis-result" style="margin-bottom: 5%;">
+    					<div class="list-group list-custom-large">
+    	                </div>
+    	            </div>
+    	            <div class="search-no-results disabled mt-4" id="dash-medrecord-searched-diagnosis-empty">
+    	                <h4>No Results</h4>
+    	                <p>
+    	                    Your search brought up no results. Try using a different keyword of the diagnosis name.
+    	                </p>
+    	            </div>
+    				<!-- //Search for Diagnosis -->
+
+    				<div id="dash-medrecord-selected-diagnosis-list">
+    				</div>
+
+    				<br>
+    				<h5 class="font-600 opacity-40 ml-1">PLAN</h5>
+
+    				<h6 class="font-13 ps-1 font-500 mb-1">Plan and Intervention</h6>
+    				<div class="input-style has-borders no-icon mb-4">
+    					<textarea id="dash-medrecord-plan" id="dash-medrecord-plan"></textarea>
+    				</div>
+
+    				<h6 class="font-13 ps-1 font-500 mb-1">Doctor's Note</h6>
+    				<div class="input-style has-borders no-icon mb-4">
+    					<textarea id="dash-medrecord-doctor-note" id="dash-medrecord--doctor-note"></textarea>
+    				</div>
+
+    				<div class="input-style input-style-always-active has-borders no-icon my-4">
+    					<input type="date" class="form-control" id="dash-medrecord-ffup-date">
+    					<label for="dash-medrecord-ffup-date" class="color-highlight">Follow-up Date</label>
+    				</div>
+    			</div>
+    		</div>
+
+    		<a href="#" class="btn btn-full rounded-sm btn-m btn-margins bg-highlight font-700 text-uppercase d-grid gap-2" id="dash-medical-record-confirm-save">CONFIRM & SAVE</a>
+
+    		<a href="#" class="close-menu color-red-dark text-uppercase font-700 text-center p-3 w-100 d-block opacity-60 font-12 d-grid gap-2">Close</a>
+    	</div>
+
+        <div id="menu-medical-attachement-dropzone"class="menu menu-box-modal menu-box-detached rounded-m"data-menu-effect="menu-over" style="width: 95%;">
+
+             <div class="m-2 col-md-12">
+               <h1 class="e-sig-title">Upload lab result</h1>
+             </div>
+
+            <div class="card card-style mt-2">
+                <div class="dropzone-container form-group col-lg-12" visible id="row_medical_attachment">
+            		<label id="file-upload-label" style="font-size: large;">Select Image or PDF file (max size 1mb)</label>
+            		<input type="hidden" value="Medical-Record-Attachment" id="module_name" />
+            		<input type="hidden" value='[]' file-limit="1" file-max-size="5" accepted-filetypes="image/*" table="" name="medical_attachment" class="file_value" />
+            		<div style="display: none;" id="image_file_list"></div>
+            		<div style="display: none;" id="image_mock_file_list">[{"link":""}]</div>
+
+            		<div class="dropzone clsbox dropzone-upload" id="medical_attachment" style="">
+            			<div class="fallback">
+            				<input name="file" type="file" />
+            			</div>
+            		</div>
+            	</div>
+
+            </div>
+            <div class="row mb-0 mb-2">
+                <div class="col-6">
+                    <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900 d-grid gap-2 btn-outline-primary">Close</a>
+                </div>
+                <div class="col-6">
+                    <a  id="save-laboratory-results"  href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase  d-grid gap-2">Save</a>
+                </div>
+            </div>
+        </div>
+
+
+
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-patient-info.js"></script>
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-medical-record.js"></script>
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-medical-order.js"></script>
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-medical-order-template.js"></script>

@@ -1,0 +1,53 @@
+
+
+.section {
+    background-color: #ffffff;
+    padding: 50px 30px;
+}
+ 
+#my-qr-reader {
+    padding: 5px !important;
+    border-radius: 8px; 
+	text-align: center;
+	border: none !important;
+	border: 0px !important;
+}
+ 
+#my-qr-reader img[alt="Info icon"] {
+    display: none;
+}
+ 
+#my-qr-reader img[alt="Camera based scan"] {
+    width: 100px !important;
+    height: 100px !important;
+}
+ 
+button {
+    padding: 10px 20px;
+    border: 1px solid #b2b2b2;
+    outline: none;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #3BAFDA;
+    transition: 0.3s background-color;
+}
+ 
+button:hover {
+    background-color: #3BAFDA;
+}
+ 
+#html5-qrcode-anchor-scan-type-change {
+    text-decoration: none !important;
+    color: #1d9bf0;
+}
+ 
+video {
+    width: 100% !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 0.25em;
+}
+

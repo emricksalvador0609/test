@@ -1,0 +1,1121 @@
+<link rel="stylesheet" type="text/css" href="../hxassets/hxcss/views/add-clinic-modal.css">
+<!-- FOOTER MENU -->
+<!-- <div class="footer" data-menu-load="dash-menu-footer.html"></div> -->
+<div class="page-content mt-5 pt-3 pb-0">
+ <!--   <div class="page-title page-title-small">
+      <h2>My Profile</h2>
+   </div> -->
+   <h3>My Profile</h3>
+ <!--   <div class="card header-card shape-rounded" data-card-height="150">
+      <div class="card-overlay bg-highlight opacity-95"></div>
+      <div class="card-overlay dark-mode-tint"></div>
+      <div class="card-bg preload-img" data-src="../hxassets/hximages/avatars/20s.jpg"></div>
+   </div> -->
+
+<!--    <div class="row mt-3"> -->
+       <!-- left side profile pic-->  
+     <!--  <div class="col-md-3">
+            <h5 class="text-black">Management my Account</h5>
+            <div>
+                <a  class="" href="?hxcurrentpage=dash-profile&hxsubpage=dash-profile-edtacc" style="color: #000">Edit Account</a>
+            </div>
+            <div>
+                <a  class="" href="?hxcurrentpage=dash-profile&hxsubpage=dash-profile-doctorlicenses" style="color: #000">Doctor Licenses</a>
+            </div>
+             <div>
+                <a  class="" href="?hxcurrentpage=dash-profile&hxsubpage=dash-profile-clinic" style="color: #000">Affiliated Clinics/Hospital</a>
+            </div>
+        
+            <br>
+            <h5 class="">Shortcuts</h5>
+            <div>
+                <a  class="" href="{{ url('user/account/wishlist') }}" style="color: #000">Transaction</a>
+            </div>
+            <div>
+                <a  class="" href="{{ url('user/account/wishlist') }}" style="color: #000">Help & Support</a>
+            </div>
+            <div>
+                <a  class="" href="{{ url('user/account/wishlist') }}" style="color: #000">Terms & Conditions</a>
+            </div>
+            <div>
+                <a  class="text-black" href="{{ url('user/account/wishlist') }}" style="color: #000">Privacy Policy</a>
+            </div>
+      </div> -->
+
+       <!-- right side profile pic-->  
+   <!--    <div class="col-md-8">
+         <div id="subpage_profile"></div>
+      </div>
+   </div>
+ -->
+
+
+   <div class="card card-style ms-0 mb-2">
+
+      <div class="content row g-2 p-2 mb-0">
+          <div class="d-flex">
+            <div id="profile-picture-container" class="d-flex align-items-center p-2" >
+               <img id="profile-avatar" src="../hxassets/hximages/logo/avatar.jpg" width="100" class="me-3 bg-highlight rounded-xl "  onerror="this.onerror=null;this.src='../hxassets/hximages/logo/avatar.jpg';" >
+
+               <i class="fa fa-camera upload-button" style="
+                    color: slategrey;
+                    left: 60px;
+                    top: 60px;
+                    position: absolute;"></i>
+            </div>
+            <div>
+               <h1 class="mb-0 pt-1" id="my-profile-full-name"></h1>
+               <p class="color-highlight font-11 mt-n2 mb-3">Medical Doctor</p>
+            </div>
+         </div>
+         <p>
+            Basic details about you. Set them here. These can be connected to your database and shown on the user profile.
+         </p>
+         <div class="row gx-2 gy-1 mb-0">
+            <div class="col-md-6 col-sm-12">
+                  <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                     <input type="text" class="form-control validate-name" id="first-name" placeholder="">
+                     <label for="first-name" class="color-highlight font-400 font-13">First Name</label>
+                     <i class="fa fa-times disabled invalid color-red-dark"></i>
+                     <i class="fa fa-check disabled valid color-green-dark"></i>
+                     <em>(required)</em>
+                  </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                  <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                     <input type="text" class="form-control validate-name" id="last-name" placeholder="">
+                     <label for="last-name" class="color-highlight font-400 font-13">Last Name</label>
+                     <i class="fa fa-times disabled invalid color-red-dark"></i>
+                     <i class="fa fa-check disabled valid color-green-dark"></i>
+                     <em>(required)</em>
+                  </div>
+            </div>
+             
+            
+            <div class="col-md-4 col-sm-6">
+               <div class="input-style has-borders no-icon mb-2 input-style-always-active">
+                   <label for="gender" class="color-highlight">Select Gender</label>
+                   <select id="gender">
+                       <option value="default" disabled="" selected="">Select Gender</option>
+                       <option value="Male">Male</option>
+                       <option value="Female">Female</option>
+                   </select>
+                   <span><i class="fa fa-chevron-down"></i></span>
+                   <i class="fa fa-check disabled valid color-green-dark"></i>
+                   <i class="fa fa-check disabled invalid color-red-dark"></i>
+                   <em></em>
+               </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+               <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+                  <input type="date" class="form-control validate-birthday" id="birthday" placeholder="">
+                  <label for="birthday" class="color-highlight font-400 font-13">Birthday</label>
+                  <i class="fa fa-times disabled invalid color-red-dark"></i>
+                  <i class="fa fa-check disabled valid color-green-dark"></i>
+                  <em>(required)</em>
+               </div> 
+            </div>
+            <div class="col-md-4 col-sm-12">
+               <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-0">
+                  <input type="text" class="form-control validate" id="title" placeholder="" style="position: relative; margin-top: 0px;">
+                  <label for="title" class="color-highlight font-400 font-13">Title</label>
+                  <i class="fa fa-times disabled invalid color-red-dark"></i>
+                  <i class="fa fa-check disabled valid color-green-dark"></i>
+                  <em>(required)</em>
+               </div>
+            </div>
+            
+            <div class="col-md-6 col-sm-12">
+               <div class="input-style has-borders no-icon input-style-always-active validate-field mb-2">
+                  <input type="email" class="form-control validate-email" id="email-address" placeholder="">
+                  <label for="email-address" class="color-highlight font-400 font-13">Email Address</label>
+                  <i class="fa fa-times disabled invalid color-red-dark"></i>
+                  <i class="fa fa-check disabled valid color-green-dark"></i>
+                  <em>(required)</em>
+               </div>
+            </div>
+            
+            <div class="col-md-6 col-sm-12">
+               <div class="input-style has-borders no-icon input-style-always-active validate-field mb-2">
+                  <input type="tel" class="form-control validate-tel" id="phone-number" placeholder="">
+                  <label for="phone-number" class="color-highlight font-400 font-13">Phone Number</label>
+                  <i class="fa fa-times disabled invalid color-red-dark"></i>
+                  <i class="fa fa-check disabled valid color-green-dark"></i>
+                  <em>(required)</em>
+               </div>
+            </div>   
+
+         </div>
+   </div>
+</div>
+
+   <!-- tabs for doctor licenses & affiliated clinics -->
+ 
+
+
+<ul class="nav nav-pills mb-2 nav-justified " id="pills-tab" role="tablist" style="flex-direction: row; justify-content: normal;">
+  <li class="nav-item d-grid gap-2" role="presentation">
+    <button class="nav-link active " id="pills-doctorlicenses-tab" data-bs-toggle="pill" data-bs-target="#pills-doctorlicenses" type="button" role="tab" aria-controls="pills-doctorlicenses" aria-selected="true">Doctor Licenses</button>
+  </li>
+  <li class="nav-item d-grid gap-2" role="presentation">
+    <button class="nav-link" id="pills-addclinics-tab" data-bs-toggle="pill" data-bs-target="#pills-addclinics" type="button" role="tab" aria-controls="pills-addclinics" aria-selected="false">Affiliated Clinics/Hospital</button>
+  </li>
+
+
+</ul>
+
+  <div class="card p-1 me-3">
+<div class="tab-content p-2" id="pills-tabContent">
+  <div class="tab-pane fade show active w-100  text-black" id="pills-doctorlicenses" role="tabpanel" aria-labelledby="pills-doctorlicenses-tab" tabindex="0" >
+  <!-- doctor licenses tab start here --> 
+   <div class="row p-1 gx-2 gy-1 mb-0 mt-2">
+  
+      <div class="col-md-6">
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mt-0 mb-2">
+               <input type="text" class="form-control validate-name" id="doctor-license-no">
+               <label for="doctor-license-no" class="color-highlight font-400 font-13">PRC Licence No</label>
+               <i class="fa fa-times disabled invalid color-red-dark"></i>
+               <i class="fa fa-check disabled valid color-green-dark"></i>
+               <em>(required)</em>
+            </div>
+       </div>
+
+      <div class="col-md-6">
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mt-0 mb-4">
+               <input type="date" class="form-control validate-name" id="doctor-license-no-expiration-date">
+               <label for="doctor-license-no-expiration-date" class="color-highlight font-400 font-13">PRC Expiration Date</label>
+               <i class="fa fa-times disabled invalid color-red-dark"></i>
+               <i class="fa fa-check disabled valid color-green-dark"></i>
+            </div>
+       </div>
+
+         <div class="col-12">
+             <div class="has-borders list-group list-custom-small has-borders  mb-2">
+                <a href="#" id="show-prc-viewer">
+                <span>PRC Licence Picture</span>
+                <i class="fa fa-edit me-2"></i>
+                </a>
+             </div>
+          </div>
+
+         <div class="col-md-12">
+            <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-3">
+               <input type="text" class="form-control validate-name" id="doctor-ptr-no" >
+               <label for="doctor-ptr-no" class="color-highlight font-400 font-13">PTR No</label>
+               <i class="fa fa-times disabled invalid color-red-dark"></i>
+               <i class="fa fa-check disabled valid color-green-dark"></i>
+               <em>(required)</em>
+            </div>
+        </div>
+
+        <div class="col-md-12" hidden>
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-3">
+               <input type="date" class="form-control validate-name" id="doctor-ptr-no-expiration-date" >
+               <label for="doctor-ptr-no-expiration-date" class="color-highlight font-400 font-13">PTR No Expiration Date</label>
+               <i class="fa fa-times disabled invalid color-red-dark"></i>
+               <i class="fa fa-check disabled valid color-green-dark"></i>
+            </div>
+       </div>
+
+        <div class="col-md-6">
+            <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-2">
+               <input type="text" class="form-control validate-name" id="doctor-sig2-no" >
+               <label for="doctor-sig2-no" class="color-highlight font-400 font-13">S2 No</label>
+               <i class="fa fa-times disabled invalid color-red-dark"></i>
+               <i class="fa fa-check disabled valid color-green-dark"></i>
+               <em>(required)</em>
+            </div>
+      </div>
+
+      <div class="col-md-6">
+         <div class="input-style has-borders hnoas-icon input-style-always-active validate-field  mb-2">
+               <input type="date" class="form-control validate-name" id="doctor-sig2-no-expiration-date" >
+               <label for="doctor-sig2-no-expiration-date" class="color-highlight font-400 font-13">S2 No Expiration Date</label>
+               <i class="fa fa-times disabled invalid color-red-dark"></i>
+               <i class="fa fa-check disabled valid color-green-dark"></i>
+            </div>
+       </div>
+
+          <div class="col-12">
+             <div class="list-group list-custom-small has-borders  mb-2">
+                <a href="#" id="show-e-signature">
+                <span>E-Signature</span>
+                <i class="fa fa-edit"></i>
+                </a>
+             </div>
+          </div>
+           <div class="col-12 ">
+             <div id="e-sig-preview-card" class="card card-style mt-2">
+                 <img  class="img-fluid text-center" id="sig-image-initial-display" style="width:100%; height: auto;  max-height: 200px !important;" src="" alt="E-Signature Empty" />
+             </div>
+          </div>
+       </div>
+
+         <div>
+            <a href="javascript:void(0);" class="btn btn-center-xl btn-m text-uppercase font-900 bg-highlight rounded-sm shadow-l" id="dash-profile-update">Update Information</a>
+         </div>
+      </div>
+
+ 
+
+      <!-- doctor licenses tab end here -->
+
+ <!-- affiliated clinics tab start here --> 
+  <div class="tab-pane fade w-100  text-black" id="pills-addclinics" role="tabpanel" aria-labelledby="pills-addclinics-tab" tabindex="0">
+       
+      <div class="content mb-2 mt-0">
+         <h3 class="font-400">Affiliated Clinics/Hospitals</h3>
+         <!-- <p>
+            Set your preferences here, notifications will be receive via SMS, Email and Phone.
+         </p> -->
+         <div class="list-group list-custom-small" id="dash-profile-clinic-div">
+         </div>
+      </div>
+  
+   <p>
+      <a href="#" class="btn btn-full btn-margins bg-highlight rounded-sm shadow-xl btn-m text-uppercase font-900" id="dash-profile-add-clinic">Add a Clinic</a>
+   </p>
+  </div>
+   <!-- affiliated clinics tab end here --> 
+
+</div>
+
+</div>
+   <!-- temporarily hide -->
+    <div class="card card-style" style="display:none;">
+        <div class="content mb-2">
+           <h3 class="font-600">Medical Form Settings</h3>
+           <p>
+              Set your Medical form header here. eg Medical Cert, Referral Letter, Prescription
+           </p>
+           <div class="list-group list-custom-small has-borders  mb-4">
+              <a href="#" id="show-medical-header-view">
+              <span>Medical Form Header</span>
+              <i class="fa fa-edit"></i>
+              </a>
+           </div>
+           <!-- <div class="list-group list-custom-small" id="dash-profile-clinic-div">
+           </div> -->
+        </div>
+
+     </div>
+
+  
+   <div class="card card-style">
+      <div class="content mb-2">
+         <h3 class="font-600">Notification Settings</h3>
+         <p>
+            Set your preferences here, notifications will be receive via SMS, Email and Phone.
+         </p>
+         <div class="list-group list-custom-small">
+            <a href="#" data-trigger-switch="switch-1">
+               <span>Events</span>
+               <div class="custom-control scale-switch ios-switch">
+                  <input type="checkbox" class="ios-input" id="switch-1" checked>
+                  <label class="custom-control-label" for="switch-1"></label>
+               </div>
+               <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#" data-trigger-switch="switch-1a">
+               <span>Announcements</span>
+               <div class="custom-control scale-switch ios-switch">
+                  <input type="checkbox" class="ios-input" id="switch-1a" checked>
+                  <label class="custom-control-label" for="switch-1"></label>
+               </div>
+               <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#" data-trigger-switch="switch-1a">
+               <span>Promotions</span>
+               <div class="custom-control scale-switch ios-switch">
+                  <input type="checkbox" class="ios-input" id="switch-1a" checked>
+                  <label class="custom-control-label" for="switch-1"></label>
+               </div>
+               <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#" data-toggle-theme data-trigger-switch="toggle-dark12" class="border-0">
+               <span>Dark Mode</span>
+               <div class="ms-auto me-4 pe-2">
+                  <div class="custom-control ios-switch scale-switch">
+                     <input data-toast="switched-color-scheme" data-toggle-theme type="checkbox" class="ios-input" id="toggle-dark12">
+                     <label class="custom-control-label" for="toggle-dark12"></label>
+                  </div>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="card card-style">
+      <div class="content mb-2">
+         <h3 class="font-600">Shortcuts</h3>
+         <div class="list-group list-custom-small">
+            <a href="?hxcurrentpage=dash-transaction">
+            <span>Transactions</span>
+            <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#" id="auth-logout">
+            <span>Logout</span>
+            <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#">
+            <span>Help & Support</span>
+            <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#">
+            <span>Terms & Conditions</span>
+            <i class="fa fa-arrow-right"></i>
+            </a>
+            <a href="#" class="border-0">
+            <span>Privacy Policy</span>
+            <i class="fa fa-arrow-right"></i>
+            </a>
+         </div>
+      </div>
+   </div>
+   <div id="menu-main"
+      class="menu menu-box-right menu-box-detached rounded-m"
+      data-menu-width="260"
+      data-menu-load="menu-main.html"
+      data-menu-effect="menu-over">
+   </div>
+</div>
+<!-- end of page content-->
+<!-- Connect with Patient -->
+<div id="action-sheet-clinic" class="menu menu-box-modal menu-box-detached rounded-m " data-menu-effect="menu-over" >
+    <input type="hidden" id="clinic_pk" value="">
+    <input type="hidden" id="clinic_schedule_pk" value="">
+   <div class="me-3 ms-3 mt-3 pt-1">
+      <h2 class="font-700 mb-0">Clinic Management</h2>
+      <p class="font-11 mb-3">
+
+      </p>
+      <div class="row mb-0 g-1">
+         <div class="col-md-12">
+            <div class="mb-2 mt-2">
+               <select id="hospital-list" class="js-example-basic-single mb-2 mt-3" name="state" style="width:100%">
+                  <option></option>
+               </select>
+            </div>   
+         </div>   
+         <div class="col-md-12">
+            <div class="mb-0 mt-0 ">
+               <div class="input-style has-borders no-icon validate-field mb-1 " >
+                  <input type="text" class="form-control validate-text" id="clinic-name" placeholder="Clinic Name">
+                  <label for="clinic-name" class="color-highlight">Clinic Name</label>
+                  <i class="fa fa-times disabled invalid color-red-dark"></i>
+                  <i class="fa fa-check disabled valid color-green-dark"></i>
+                  <em>(required)</em>
+              </div>
+            </div>      
+         </div>
+      
+         <div class="col-md-6 col-sm-12">
+            <div class="input-style has-borders no-icon mb-1">
+                 <label for="form5" class="color-highlight">Select Clinic Type</label>
+                 <select id="clinic-type">
+                     <option value ="" disabled="" selected="">Select Clinic Type</option>
+                     <option value="Government">Government</option>
+                     <option value="Private">Private</option>
+                 </select>
+                 <span>
+                     <i class="fa fa-chevron-down"></i>
+                 </span>
+                 <i class="fa fa-check disabled valid color-green-dark"></i>
+                 <i class="fa fa-check disabled invalid color-red-dark"></i>
+                 <em></em>
+            </div>
+         </div>   
+         <div class="col-md-6 col-sm-12">
+             <div class="input-style has-borders no-icon validate-field mb-1">
+               <input type="number" class="form-control validate-tel" id="clinic-phone-number" placeholder="Phone Number" maxlength="13">
+               <label for="clinic-phone-number" class="color-highlight font-400 font-13">Phone Number</label>
+                 <i class="fa fa-times disabled invalid color-red-dark"></i>
+                 <i class="fa fa-check disabled valid color-green-dark"></i>
+                <em>(required)</em>
+            </div>
+         </div> 
+      
+         <div class="col-md-12">
+            <div class="input-style has-borders no-icon mb-0">
+               <textarea id="clinic-address" placeholder="Address"></textarea>
+               <label for="clinic-address" class="color-highlight">Address</label>
+               <em class="mt-n3">(required)</em>
+            </div>
+         </div>   
+      
+	    <!-- <div class="input-style has-borders no-icon mb-2">
+	        <textarea id="clinic-header" placeholder="Header Text"></textarea>
+	        <label for="clinic-header" class="color-highlight">Header Text</label>
+	        <em class="mt-n3">(required)</em>
+	    </div> -->
+
+       </div>
+      <div class="card mx-0 mb-0" data-card-height="30">
+         <div class="card-center ms-3 ps-1 ">
+            <h1 class="font-15 show-business-open working-message-above color-white mb-n4">Clinic Schedule</h1>
+         </div>
+         <div class="card-overlay rounded-0 show-business-open bg-highlight"></div>
+      </div>
+
+
+      <div class="card card-style card-days-schedule">
+         <div class="content mb-0 mt-2">
+            <!-- monday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-monday"
+                     data-bs-toggle="collapse"
+                     href="#monday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="monday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Monday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-monday">
+                           <label class="custom-control-label" for="toggle-monday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="monday-time-container">
+               <div class="row time-range-container">
+                  <div class="text-start col-12  mb-2">
+	                  <span class="text-start col-6">Time Range</span>
+                  		<i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="monday-time-container"></i>
+                  </div>
+               </div>
+            </div>
+            <!-- monday end-->
+            <!-- tuesday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-tuesday"
+                     data-bs-toggle="collapse"
+                     href="#tuesday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="tuesday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Tuesday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-tuesday">
+                           <label class="custom-control-label" for="toggle-tuesday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="tuesday-time-container">
+               <div class="row time-range-container">
+                  <button class="text-start col-12 mb-2">
+                  <span class="text-start col-6 mb-2">Time Range</span>
+                  <i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="tuesday-time-container"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- tuesday end-->
+            <!-- wednesday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-wednesday"
+                     data-bs-toggle="collapse"
+                     href="#wednesday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="wednesday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Wednesday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-wednesday">
+                           <label class="custom-control-label" for="toggle-wednesday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="wednesday-time-container">
+               <div class="row time-range-container">
+                  <button class="text-start col-12 mb-2">
+                  <span class="text-start col-6">Time Range</span>
+                  <i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="wednesday-time-container"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- wednesday end-->
+            <!-- thursday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-thursday"
+                     data-bs-toggle="collapse"
+                     href="#thursday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="thursday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Thursday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-thursday">
+                           <label class="custom-control-label" for="toggle-thursday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="thursday-time-container">
+               <div class="row time-range-container">
+                  <button class="text-start col-12 mb-2">
+                  <span class="text-start col-6">Time Range</span>
+                  <i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="thursday-time-container"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- thursday end-->
+            <!-- friday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-friday"
+                     data-bs-toggle="collapse"
+                     href="#friday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="friday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Friday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-friday">
+                           <label class="custom-control-label" for="toggle-friday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="friday-time-container">
+               <div class="row time-range-container">
+                  <button class="text-start col-12 mb-2">
+                  <span class="text-start col-6">Time Range</span>
+                  <i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="friday-time-container"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- friday end-->
+            <!-- saturday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-saturday"
+                     data-bs-toggle="collapse"
+                     href="#saturday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="saturday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Saturday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-saturday">
+                           <label class="custom-control-label" for="toggle-saturday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="saturday-time-container">
+               <div class="row time-range-container">
+                  <button class="text-start col-12 mb-2">
+                  <span class="text-start col-6">Time Range</span>
+                  <i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="saturday-time-container"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- saturday end-->
+            <!-- sunday start-->
+            <div class="row justify-content-center  mb-0">
+               <div class="col-12">
+                  <div class="d-flex no-effect"
+                     data-trigger-switch="toggle-sunday"
+                     data-bs-toggle="collapse"
+                     href="#sunday-time-container"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="sunday-time-container">
+                     <div class="pt-2 mt-1">
+                        <h5 class="font-600 font-14">Sunday</h5>
+                     </div>
+                     <div class="ms-auto me-4 pe-2">
+                        <div class="ios-switch">
+                           <input type="checkbox" class="ios-input" id="toggle-sunday">
+                           <label class="custom-control-label" for="toggle-sunday"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse mb-0 w-100" id="sunday-time-container">
+               <div class="row time-range-container">
+                  <button class="text-start col-12 mb-2" >
+                  <span class="text-start col-6">Time Range</span>
+                  <i class="col-6 text-end fa fa-plus-circle font-25 accordion-icon add-time" parent-root-div="sunday-time-container"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- sunday end-->
+         </div>
+      </div>
+
+      <!-- adding secretary field start here -->
+      <!-- added by emrick 8/12/2024 -->
+       <div class="card mx-0 mb-0" data-card-height="30">
+         <div class="card-center ms-3 ps-1 ">
+            <h1 class="font-15 show-business-open working-message-above color-white mb-n4">Secretary</h1> 
+         </div>
+         <div class="card-overlay rounded-0 show-business-open bg-highlight"></div>
+      </div>
+
+      <div id="dash-profile-sec-div" >
+         
+      </div>
+
+   
+     <div id="newinput"></div>
+     <button id="rowAdder" type="button" class="btn btn-primary bg-highlight w-100 mt-1">
+         <span class="bi bi-plus-square-dotted">
+         </span> ADD Secretary
+     </button>
+
+     <!-- adding secretary field end here -->
+
+
+     <div class="row mb-0">
+           <div class="col-6">
+               <a href="#" class="btn btn-border btn-m btn-full btn-margins rounded-s text-uppercase font-700 border-red-dark color-red-dark close-menu color-red-dark mt-4 mb-4 d-grid gal-2 btn-outline-danger">Close</a>
+           </div>
+           <div class="col-6">
+                <a href="#" class="btn btn-full btn-m shadow-l rounded-s bg-highlight text-uppercase font-900 mt-4 mb-4 d-grid gal-2" id="dash-patient-save-clinic">SAVE CLINIC</a>
+           </div>
+
+           <div class="col-6">
+                <a href="#" class="btn btn-full btn-m shadow-l rounded-s bg-highlight text-uppercase font-900 mt-4 mb-4 d-grid gal-2" id="dash-patient-edit-clinic">UPDATE</a>
+           </div>
+       </div>
+
+   </div>
+</div>
+
+
+<!-- E signature -->
+<div id="menu-e-sig-view"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+     data-menu-width="340"
+     data-menu-effect="menu-over">
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">E-Signature</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+        <img id="sig-image" style="width:100%; height: 100%;" src="" alt="E-Signature Empty" />
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a data-menu="menu-e-sig-pad" href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Update E-sig</a>
+        </div>
+    </div>
+</div>
+
+<div id="menu-e-sig-pad"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+     data-menu-width="340"
+     data-menu-effect="menu-over">
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Draw E-Sig</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+
+        <div class="flex-row">
+           <div class="wrapper" style="width: 100%;">
+               <canvas id="signature-pad" height="400"></canvas>
+           </div>
+           <div class="clear-btn">
+               <button id="clear"><span> Clear </span></button>
+           </div>
+        </div>
+
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a id="btn-e-sig-preview" href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Preview</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Tips Menu 1-->
+<div id="menu-e-sig-save"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+
+     data-menu-width="340"
+     data-menu-effect="menu-over">
+
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Save E-Sig</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+
+        <img id="sig-image-preview" style="width:100%; height: 100%;" src="" alt="E-Signature" />
+
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" data-menu="menu-e-sig-pad" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight text-uppercase font-900">Back</a>
+        </div>
+        <div class="col-6">
+            <a  id="e-sig-save"  href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Save</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="menu-profile-pic"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+
+     data-menu-width="340"
+     data-menu-effect="menu-over">
+
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Profile Picture</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+
+        <img id="profile-image-preview" style="width:100%; height: 100%;" src="" alt="Profile Picture" onerror="this.onerror=null;this.src='../hxassets/hximages/logo/avatar.jpg';"/>
+
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900 btn-outline-primary d-grid gap-2">Close</a>
+        </div>
+        <div class="col-6">
+            <a  id="update-profile-picture"  href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase d-grid gap-2">Update</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="menu-profile-pic-dropzone"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+
+     data-menu-width="340"
+     data-menu-effect="menu-over">
+
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Upload Profile Picture</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+        <div class="dropzone-container form-group col-lg-12" visible id="row_profile_image">
+    		<label>Photo (1 Image Only)</label>
+    		<input type="hidden" value="Laboratory" id="module_name" />
+    		<input type="hidden" value='[]' file-limit="1" file-max-size="1" accepted-filetypes="image/*" table="" name="profile_image" class="file_value" />
+    		<div style="display: none;" id="image_file_list"></div>
+    		<div style="display: none;" id="image_mock_file_list">[{"link":""}]</div>
+
+    		<div class="dropzone clsbox dropzone-upload" id="profile_image" style="">
+    			<div class="fallback">
+    				<input name="file" type="file" />
+    			</div>
+    		</div>
+    	</div>
+
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a  id="save-profile-picture"  href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Save</a>
+        </div>
+    </div>
+</div>
+
+<!-- medical header form start -->
+
+<div id="menu-medical-header-view"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+
+     data-menu-effect="menu-over">
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Medical Form Header</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+        <img id="medical-form-header-view" style="width:100%; height: 100%;" src="" alt="Medical Form Header Empty" />
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a data-menu="menu-medical-header-dropzone" href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Update</a>
+        </div>
+    </div>
+</div>
+
+<div id="menu-medical-header-dropzone"
+     class="menu menu-box-modal menu-box-detached rounded-m width-90"
+
+     data-menu-effect="menu-over">
+
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Upload Medical Header</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+        <div class="dropzone-container form-group col-lg-12" visible id="row_profile_image">
+    		<label>Photo (1 Image Only)</label>
+    		<input type="hidden" value="Medical-Form-Header" id="module_name" />
+    		<input type="hidden" value='[]' file-limit="1" file-max-size="1" accepted-filetypes="image/*" table="" name="medical_form_header" class="file_value" />
+    		<div style="display: none;" id="image_file_list"></div>
+    		<div style="display: none;" id="image_mock_file_list">[{"link":""}]</div>
+
+    		<div class="dropzone clsbox dropzone-upload" id="medical_form_header" style="">
+    			<div class="fallback">
+    				<input name="file" type="file" />
+    			</div>
+    		</div>
+    	</div>
+
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a  id="save-medical-form-header"  href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Save</a>
+        </div>
+    </div>
+</div>
+
+<!-- medical header form  end -->
+
+
+<!-- PRC  Image uploadeer Start-->
+<div id="menu-prc-id-view"
+     class="menu menu-box-modal menu-box-detached rounded-m"
+
+     data-menu-effect="menu-over">
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">PRC ID Image</h1>
+     </div>
+
+    <a id="medical-prc-id-container" class="card card-style mt-2" data-gallery="gallery-1" href="">
+        <img id="medical-prc-id-view"  data-src="" style="width:100%; height: 100%;" src="" alt="PRC Id Image" />
+    </a>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a data-menu="menu-prc-id-dropzone" href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Update</a>
+        </div>
+    </div>
+</div>
+
+<div id="menu-prc-id-dropzone"
+     class="menu menu-box-modal menu-box-detached rounded-m width-90"
+     data-menu-effect="menu-over">
+
+     <div class="m-2 col-md-12">
+       <h1 class="e-sig-title">Upload PRC Id Image</h1>
+     </div>
+
+    <div class="card card-style mt-2">
+        <div class="dropzone-container form-group col-lg-12" visible id="row_prc_id_image">
+    		<label>Kindly select a clear image of your PRC Id</label>
+    		<input type="hidden" value="PRC-ID" id="module_name" />
+    		<input type="hidden" value='[]' file-limit="1" file-max-size="1" accepted-filetypes="image/*" table="" name="prc_id" class="file_value" />
+
+    		<div class="dropzone clsbox dropzone-upload" id="prc_id" style="">
+    			<div class="fallback">
+    				<input name="file" type="file" />
+    			</div>
+    		</div>
+    	</div>
+
+    </div>
+    <div class="row mb-0 mb-2">
+        <div class="col-6">
+            <a href="#" class="btn btn-border btn-sm ms-3 rounded-s btn-full shadow-l color-highlight border-highlight close-menu text-uppercase font-900">Close</a>
+        </div>
+        <div class="col-6">
+            <a  id="save-prc-id"  href="#" class="btn btn-sm me-3 rounded-s btn-full shadow-l bg-highlight font-900 text-uppercase">Save</a>
+        </div>
+    </div>
+</div>
+<!-- PRC Image uploader end -->
+
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-profile.js" ></script>
+<script type="text/javascript" src="../hxassets/hxjs/views/add-clinic-modal.js" ></script>
+<script type="text/javascript" src="../hxassets/hxjs/views/dash-profile-e-sig.js" ></script>
+
+
+<!-- script update added by emrick 8.12.2024 -->
+<script language="Javascript">
+      $(document).ready(function(){
+   
+
+          let current_page2 = getUrlParameter('hxcurrentpage');
+         let current_subpage = getUrlParameter('hxsubpage');
+
+         //welcome screen
+         if(current_subpage === false){
+
+            $("#subpage_profile").load("dash-profile-edtacc.html");
+            $("#subpage_profile").addClass("dash-profile-edtacc.html");
+
+         //other pages
+         }else{
+          $("#subpage_profile").load(current_subpage + ".html");
+
+           $('a[href="?hxcurrentpage='+current_page2+'&hxsubpage='+current_subpage+'"]').addClass('active-prfle');
+         }
+
+          
+             $("#rowAdder").click(function () {
+               var number_row = $("div[id='row']").length+1;
+              
+
+            newRowAdd =
+                '<div id="row" class="row mb-0 mt-1 g-1 secrow" data-id="'+number_row+'"> '+
+          '<div class="col-md-6" > '+
+            '<div class="mb-0 mt-0 "> '+
+              '<div class="input-style has-borders no-icon validate-field mb-1 "> '+
+                  '<input type="text" class="form-control validate-text" id="secretary-first-name'+number_row+'" placeholder="First Name"> '+
+                  '<label for="secretary-first-name'+number_row+'" class="color-highlight">First Name</label> '+
+                  '<i class="fa fa-times disabled invalid color-red-dark"></i> '+
+                  '<i class="fa fa-check disabled valid color-green-dark"></i> '+
+                  '<em>(required)</em> '+
+              '</div> '+
+            '</div> '+      
+         '</div> '+
+        '<div class="col-md-6"> '+
+           '<div class="mb-0 mt-0 "> '+
+              '<div class="input-style has-borders no-icon validate-field mb-1 "> '+
+                  '<input type="text" class="form-control validate-text" id="secretary-last-name'+number_row+'" placeholder="Last Name"> '+
+                  '<label for="secretary-last-name'+number_row+'" class="color-highlight">Last Name</label> '+
+                  '<i class="fa fa-times disabled invalid color-red-dark"></i> '+
+                  '<i class="fa fa-check disabled valid color-green-dark"></i> '+
+                  '<em>(required)</em> '+
+              '</div> '+
+            '</div> '+      
+         '</div> '+
+
+         '<div class="col-md-6"> '+
+            '<div class="mb-0 mt-0 "> '+
+               '<div class="input-style has-borders no-icon validate-field mb-1 "> '+
+                  '<input type="email" class="form-control validate-text" id="secretary-email'+number_row+'" placeholder="Email"> '+
+                  '<label for="secretary-email'+number_row+'" class="color-highlight">Email</label> '+
+                  '<i class="fa fa-times disabled invalid color-red-dark"></i> '+
+                  '<i class="fa fa-check disabled valid color-green-dark"></i> '+
+                  '<em>(required)</em> '+
+              '</div> '+
+            '</div> '+      
+         '</div> '+
+
+         '<div class="col-md-6"> '+
+             '<div class="input-style has-borders no-icon validate-field mb-1"> '+
+               '<input type="number" class="form-control validate-tel" id="secretary-phone-number'+number_row+'" placeholder="Phone Number" maxlength="13"> '+
+               '<label for="secretary-phone-number'+number_row+'" class="color-highlight font-400 font-13">Phone Number</label> '+
+                 '<i class="fa fa-times disabled invalid color-red-dark"></i> '+
+                 '<i class="fa fa-check disabled valid color-green-dark"></i> '+
+                '<em>(required)</em> '+
+            '</div> '+
+         '</div> '+
+
+         '<div class="col-md-6"> '+
+             '<div class="input-style has-borders no-icon validate-field mb-1"> '+
+               '<input type="password" class="form-control validate-tel" id="secretary-temp-password'+number_row+'" placeholder="Temp Password" maxlength="13"> '+
+               '<label for="secretary-temp-password'+number_row+'" class="color-highlight font-400 font-13">Temp Password</label> '+
+                 '<i class="fa fa-times disabled invalid color-red-dark"></i> '+
+                 '<i class="fa fa-check disabled valid color-green-dark"></i> '+
+                '<em>(required)</em> '+
+            '</div> '+
+         '</div> '+
+
+         '<div class="col-md-6"> '+
+             '<div class="input-style has-borders no-icon validate-field mb-1"> '+
+               '<input type="password" class="form-control validate-tel" id="secretary-confirm-temp-password'+number_row+'" placeholder="Confirm Temp Password" maxlength="13"> '+
+               '<label for="secretary-confirm-temp-password'+number_row+'" class="color-highlight font-400 font-13">Confirm Temp Password</label> '+
+                 '<i class="fa fa-times disabled invalid color-red-dark"></i> '+
+                 '<i class="fa fa-check disabled valid color-green-dark"></i> '+
+                '<em>(required)</em> '+
+            '</div> '+
+         '</div> '+
+      '<button class="btn btn-danger" id="DeleteRow" type="button"><i class="bi bi-trash"></i> Delete</button></div> ';
+
+            $('#newinput').append(newRowAdd);
+
+            
+            console.log('no of secretary for add:'+number_row);
+     
+
+            var ids = $('.secrow').map(function() {
+              return $(this).data('id');
+            });
+            console.log('get id:'+ids.toArray());
+
+        });
+
+
+        $("body").on("click", "#DeleteRow", function () {
+         console.log('delete');
+            $(this).parents("#row").remove();
+            var number_row = $("div[id='row']").length;
+            console.log(number_row);
+             var ids = $('.secrow').map(function() {
+              return $(this).data('id');
+            });
+            console.log('get id:'+ids.toArray());
+            if(number_row==0){
+                showToastNotification("Error!", "null value","error");
+            }
+        })
+
+      });   
+
+   </script>
+
+
+
+

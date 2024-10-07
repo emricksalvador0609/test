@@ -1,0 +1,123 @@
+
+<!--start of page content -->
+
+
+   
+<div class="d-flex align-items-center justify-content-center mt-lg-3  h-100">
+
+    <div class="container">
+         <div class="row">
+            <div class="col-md-4 " 
+            style="background: linear-gradient(rgba(0,0,0,0.4), rgba(255,255,255,0.4)),url('../hxassets/hximages/logo/login_bg.png') 
+            no-repeat center center; background-size: cover;">
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                     <img src="../hxassets/hximages/logo/logoonly_2.png"
+                        class="img-fluid" style="height: 110px; width:auto;"> 
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="row mt-4 mb-3" >
+                        <div class="text-center">
+                            <h3 style="color: #fff;">New Member ?</h3>   
+                        </div> 
+                        <div class="text-center">
+                            <a class="btn btn-primary p-2" style="background-color: #4bb0da; font-size: 10px; width: 150px;" 
+                            href="?hxcurrentpage=auth-register">Register Now!</a> 
+                        </div>
+                    </div>                  
+                </div>
+           </div>
+            <div class="col-md-8 card rounded-0 mb-0">
+                <div class=" container">
+                    <!-- header title-->
+                    <div class="d-flex justify-content-center mt-3">
+                        <h4 class="text-center" style="color: #4bb0da">
+                            Welcome to HealthXense! Please Login.
+                        </h4>
+                    </div>
+
+               
+
+                   <!-- social label title-->
+                    <div class="d-flex justify-content-center mt-2">
+                        <p style="color: #bdc3c7; font-size: 14px;"> Follow us on our social media pages!</p>
+                    </div>
+                    <!-- social media icons-->
+                    <div class="row g-0 d-flex align-items-center justify-content-center mb-2">
+                        <div class="col-md-6">
+                           <div class="row g-0 d-flex align-items-center justify-content-center">
+                                <div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                    
+                                    <a href="#"><img src="../hxassets/hximages/logo/google_logo2.png"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>
+                                <div class="col-sm col d-flex align-items-center justify-content-center" > 
+                               <a href="#"><img src="../hxassets/hximages/logo/facebook_logo2.png"   
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>
+                                <!--<div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                 <a href="{{ url('auth/twitter') }}"><img src="{{URL::asset('/image/twitter_logo.png')}}"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>-->
+                                <!--<div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                 <a href="{{ url('auth/instagram') }}"><img src="{{URL::asset('/image/instagram_logo2.png')}}"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div> -->
+                                <div class="col-sm col d-flex align-items-center justify-content-center"> 
+                                <a href="#"><img src="../hxassets/hximages/logo/linkedin_logo2.png"
+                                       class="img-fluid" style="height: 60px; width:60px;"></a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <!-- social label title-->
+                    <div class="d-flex justify-content-center mt-3 pe-2 ps-2">
+                        <div class="hr-sect">or</div>
+                    </div>
+
+                    <div class="card-body p-2">
+                     
+                    
+
+                          <div class="input-style no-borders has-icon validate-field mb-4">
+                            <i class="fa fa-user"></i>
+                            <input id="username" type="text" class="form-control" placeholder="Username">
+                            <label for="form1a" class="color-blue-dark font-10 mt-1">Username</label>
+                            <i class="fa fa-times disabled invalid color-red-dark"></i>
+                            <i class="fa fa-check disabled valid color-green-dark"></i>
+                            <em>(required)</em>
+                        </div>
+
+                            <!-- Password Input-->
+                          <div class="input-style no-borders has-icon validate-field mb-4">
+                    <i class="fa fa-lock"></i>
+                    <input id="password" type="password" class="form-control" placeholder="Password" >
+                    <label for="form3a" class="color-blue-dark font-10 mt-1">Password</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div> 
+                            <!-- Forgot Password Link-->
+                            <div class="text-end mt-2 mb-2">
+                               
+                                    <a href="?hxcurrentpage=auth-forgot-password" class="fw-light link-primary">
+                                    Forgot password?
+                                    </a>
+                               
+                            </div>
+                            <!-- Login Button-->
+                            <div class="d-md-flex justify-content-md-end">
+                                <!-- buttonsearch -->
+                              <a id="btn-login" class="btn btn-m mt-4 mb-4 btn-full bg-blue-dark rounded-sm text-uppercase font-900" href="#">Login</a>
+                      
+                    </div>
+                </div>  
+            </div>
+         </div>       
+    </div>
+</div> 
+
+<!-- end of page content-->
+
+<script type="text/javascript" src="../hxassets/hxjs/views/login.js" ></script>

@@ -5,7 +5,7 @@ $(document).ready(function(){
 		if(typeof prof_data == "object" && prof_data.hasOwnProperty(0)){
 		 	
 		 	getTodaysPatients();
-		 	//added by emrick 9/26/204
+		 	//added by emrick 9/26/2024
 		 	getrequestedconsult();
 		 	getcountrequestedconsult();
 		 	
